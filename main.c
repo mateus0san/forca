@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 
   file_name = get_file(argc, argv);
   word = get_word(file_name);
-  printf("hello world");
+
   return 0;
 }
 
