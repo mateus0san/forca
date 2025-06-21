@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
 #include "forca.h"
 
@@ -16,6 +15,7 @@ int main(int argc, char *argv[]) {
     exit(EXIT_FAILURE);
   }
 
-  printf("%s\n", word);
+  start_game(file_name, word);
+  
 }
 

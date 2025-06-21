@@ -29,7 +29,7 @@ Interpretador
 Linguagem
 Python
 Java
-C++
+C
 Ruby
 JavaScript
 HTML
@@ -46,5 +46,5 @@ Banco de dados
 Arquitetura
 MVC
 Git
-Node.js
+Nodejs
 Docker

@@ -8,8 +8,7 @@
 #define MAX_WORD_SIZE 50
 
 char *get_file(int argc, char *argv[]) {
-  argc--;
-  if (argc < 1) {
+  if (--argc < 1) {
     fprintf(stderr, "Forca: bad usage\n");
     return NULL;
   }
@@ -42,7 +41,7 @@ int read_words(FILE *fi, char **words) {
   return word_counter;
 }
 
-char *choose_word(char **words, int n, char *file_name) {
+char *choose_word(char **words, int n, const char *file_name) {
 
   int index = (rand() % n);
 
@@ -59,10 +58,20 @@ char *choose_word(char **words, int n, char *file_name) {
     fprintf(stderr, "Forca: invalid word in %s", file_name);
     return NULL;
   }
+  
   return words[index];
 }
 
-char *get_word(char *file_name) {
+void free_words(char *words[], int n_words, char *word) {
+  for (int i = 0; i < n_words; i++) {
+    if (word != words[i]) {
+      free(words[i]);
+    }
+  }
+  free(words);
+}
+
+char *get_word(const char *file_name) {
   FILE *fi;
 
   if ((fi = fopen(file_name, "r")) == NULL) {
@@ -76,5 +85,101 @@ char *get_word(char *file_name) {
     fprintf(stderr, "Forca: can't read words in %s", file_name);
   }
 
-  return choose_word(words, n_words, file_name);
+  char *return_word = choose_word(words, n_words, file_name);
+
+  free_words(words, n_words, return_word);
+
+  return return_word;
+}
+void drawn_hangman(int misses) {
+  switch (misses) {
+    case 0:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |\n\
+             |\n\
+             |\n\
+             |\n");
+    break;
+    case 1:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |\n\
+             |\n\
+             |\n");
+    break;
+    case 2:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |       |\n\
+             |\n\
+             |\n");
+    break;
+    case 3:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\n\
+             |\n\
+             |\n");
+    break;
+    case 4:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |\n\
+             |\n");
+    break;
+    case 5:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |        \\\n\
+             |\n");
+    break;
+    case 6:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |      / \\\n\
+             |\n");
+    break;
+  }
+}
+void start_game(const char *file_name, const char *word) {
+
+  int right = 0, wrong = 0;
+  int len = strlen(word);
+  char *unknown_word = malloc(len);
+
+  memset(unknown_word, '_', len);
+  for (int i = 0; i < len; i++) {
+    if (word[i] == ' ')
+      unknown_word[i] = ' ';
+  }
+  unknown_word[len] = '\0';
+
+  for (int i = 0; i <  6; i++) {
+  system("clear");
+  printf("%s -> %s\n", file_name, word);
+  printf("-------%s-------\n", file_name);
+  drawn_hangman(++wrong);
+
+  printf("%s\n", unknown_word);
+
+  printf("\nacertos: %d\nerros: %d\n", right, wrong);
+  system("sleep 3");
+}
 }
