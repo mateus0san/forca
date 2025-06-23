@@ -1,21 +1,34 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 #include "forca.h"
+
+int play_again() {
+  int c, op;
+  printf("Voce quer jogar novamente? <s/n> ");
+  while ((c = getc(stdin)) != EOF && c != '\n') {
+    op = c;
+  } 
+
+  return ((op == 'S' || op == 's') && c == '\n') ? 1 : 0;
+}
 
 int main(int argc, char *argv[]) {
   srand(time(NULL));
 
   char *file_name, *word;
 
-  if ((file_name = get_file(argc, argv)) == NULL) {
-    exit(EXIT_FAILURE);
-  }
+  do {
+    if ((file_name = get_file(argc, argv)) == NULL) {
+      exit(EXIT_FAILURE);
+    }
 
-  if ((word = get_word(file_name)) == NULL) {
-    exit(EXIT_FAILURE);
-  }
+    if ((word = get_word(file_name)) == NULL) {
+      exit(EXIT_FAILURE);
+    }
 
-  start_game(file_name, word);
-  
+      system("clear");
+      start_game(file_name, word);
+      free(word);
+  } while (play_again());  
 }
-

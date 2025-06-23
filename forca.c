@@ -158,28 +158,115 @@ void drawn_hangman(int misses) {
     break;
   }
 }
+
+int drawn_game(const char *file, const char *word, const char *unknown_word, const int right, const int wrong, const char *already_guessed) {
+  printf("-------%s-------\n", file);
+  drawn_hangman(wrong);
+  printf("%s\n", unknown_word);
+  printf("acertos: %d\nerros: %d\n", right, wrong);
+  printf("Chutou: %s\n", already_guessed);
+  printf("Chute um char ou uma palavra: ");
+
+  if (wrong == 6) {
+    printf("\n\t-------Voce Perdeu-------\n");
+    printf("A palavra era: %s\n", word);
+    return 0;
+  }
+  if (strcmp(word, unknown_word) == 0) {
+      printf("\n\t-------Voce Venceu-------\n");
+      return 0;
+  }
+  return 1;
+}
+
+void guess_char(const char guess, char *already_guessed, const char *word,
+                 char *unknown_word, int *right, int *wrong) {
+  if (strchr(already_guessed, guess) != NULL) {
+    printf("Voce ja chutou a letra %c\n", guess);
+    system("sleep 1");
+    return;
+  }
+
+
+  int i = 0;
+  while (already_guessed[i] != '\0')
+    i++; 
+  already_guessed[i++] = guess;
+  already_guessed[i] = '\0';
+
+  int count = 0;
+  for (i = 0; word[i] != '\0'; i++) {
+    if (word[i] == guess) {
+      unknown_word[i] = guess;
+      count++;
+    }
+  }
+  if (count > 0)
+    *right += 1;
+  else
+    *wrong += 1;
+}
+
+void guess_string(const char *guess, char *already_guessed, const char *word,
+                  char *unknown_word, int *wrong, int len_guess) {
+  if (strcmp(word, guess) == 0) {
+    strcpy(unknown_word, word);
+    return;
+  }
+
+  *wrong += len_guess;
+
+  if (*wrong > 6) {
+    *wrong = 6;
+  }
+}
+
+#define MAX_GUESS 1000
+int take_guesses(char *already_guessed, const char *word, char *unknown_word, int *right, int *wrong) {
+  int c;
+  char guess[MAX_GUESS];
+
+  int i = 0;
+  while (i < MAX_GUESS && (c = getc(stdin)) != EOF && c != '\n') {
+    if (isalpha(c)) {
+      guess[i++] = tolower(c);
+    }
+    else {
+      fprintf(stderr, "Forca: unknown char %c\n", c);
+      system("sleep 1");
+    }
+  }
+
+  guess[i] = '\0';
+  if (c == EOF)
+    return EOF;
+
+  int len_guess;
+  if ((len_guess = strlen(guess)) == 1)
+    guess_char(guess[0], already_guessed, word, unknown_word, right, wrong);
+  else if (len_guess > 1)
+    guess_string(guess, already_guessed, word, unknown_word, wrong, len_guess);
+  else {
+    fprintf(stderr, "Forca: invalid guess %s\n", guess);
+    system("sleep 1");
+  }
+  return 0;
+}
+
 void start_game(const char *file_name, const char *word) {
-
-  int right = 0, wrong = 0;
-  int len = strlen(word);
+  int right = 0, wrong = 0, len = strlen(word);
   char *unknown_word = malloc(len);
+  char already_guessed[26] = "";
 
-  memset(unknown_word, '_', len);
   for (int i = 0; i < len; i++) {
-    if (word[i] == ' ')
-      unknown_word[i] = ' ';
+    unknown_word[i] = (word[i] == ' ') ? ' ' : '_';
   }
   unknown_word[len] = '\0';
+  while (drawn_game(file_name, word, unknown_word, right, wrong, already_guessed)) {
+    take_guesses(already_guessed, word, unknown_word, &right, &wrong);
+    system("clear");
+  }
 
-  for (int i = 0; i <  6; i++) {
-  system("clear");
-  printf("%s -> %s\n", file_name, word);
-  printf("-------%s-------\n", file_name);
-  drawn_hangman(++wrong);
-
-  printf("%s\n", unknown_word);
-
-  printf("\nacertos: %d\nerros: %d\n", right, wrong);
-  system("sleep 3");
-}
+  system("sleep 1");
+  free(unknown_word);
 }
