@@ -15,7 +15,7 @@ arquivo serve como dica para adivinhar a palavra.
 
 O usuário pode digitar letras de A-Za-z ou palavras como `python` ou
 `rust programming language`, erros serão reletados caso 
-o usurário informer palavras fora desse padrão.
+o usurário informe palavras fora desse padrão.
 
 ### Executando e compilando
 ```bash
