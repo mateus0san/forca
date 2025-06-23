@@ -228,7 +228,7 @@ int take_guesses(char *already_guessed, const char *word, char *unknown_word, in
 
   int i = 0;
   while (i < MAX_GUESS && (c = getc(stdin)) != EOF && c != '\n') {
-    if (isalpha(c)) {
+    if (isalpha(c) || c == ' ') {
       guess[i++] = tolower(c);
     }
     else {
