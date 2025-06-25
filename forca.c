@@ -7,6 +7,7 @@
 #define MAX_WORDS 50
 #define MAX_WORD_SIZE 50
 
+// return one string in argv
 char *get_file(int argc, char *argv[]) {
   if (--argc < 1) {
     fprintf(stderr, "Forca: bad usage\n");
@@ -24,6 +25,7 @@ char *get_file(int argc, char *argv[]) {
   return argv[index];
 }
 
+// read all words in a file
 int read_words(FILE *fi, char **words) {
   int word_counter = 0;
 
@@ -41,6 +43,7 @@ int read_words(FILE *fi, char **words) {
   return word_counter;
 }
 
+// return one word
 char *choose_word(char **words, int n, const char *file_name) {
 
   int index = (rand() % n);
@@ -91,6 +94,7 @@ char *get_word(const char *file_name) {
 
   return return_word;
 }
+
 void drawn_hangman(int misses) {
   switch (misses) {
     case 0:
@@ -267,6 +271,5 @@ void start_game(const char *file_name, const char *word) {
     system("clear");
   }
 
-  system("sleep 1");
   free(unknown_word);
 }
