@@ -3,6 +3,7 @@
 #include <time.h>
 #include "forca.h"
 
+// funcao pergunta se voce quer jogar de novo
 int play_again() {
   int c, op;
   printf("Voce quer jogar novamente? <s/n> ");
