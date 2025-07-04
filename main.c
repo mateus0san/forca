@@ -3,6 +3,7 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
+#include <locale.h>
 
 #define MAX_WORDS 50
 #define MAX_WORD_SIZE 50
@@ -13,9 +14,13 @@ void start_game(const char *, const char *);
 int play_again(void);
 
 
-//Wallace gabriel comentou aqui 
+//Wallace gabriel comentou aqui
+//Ryan comentou aqui, inclusão da biblioteca locale.h
+
 int main(int argc, char *argv[]) {
   srand(time(NULL));
+
+  setlocale(LC_ALL, "Portuguese");
 
   char *file_name, *word;
 
@@ -248,8 +253,8 @@ void guess_char(const char guess, char *already_guessed, const char *word,
     *wrong += 1;
 }
 
-void guess_string(const char *guess, char *already_guessed, const char *word,
-                  char *unknown_word, int *wrong, int len_guess) {
+void guess_string(const char *guess, char *already_guessed, const char *word, char *unknown_word, int *wrong, int len_guess) {
+  strcat(already_guessed, guess);
   if (strcmp(word, guess) == 0) {
     strcpy(unknown_word, word);
     return;
@@ -296,7 +301,7 @@ int take_guesses(char *already_guessed, const char *word, char *unknown_word, in
 
 void start_game(const char *file_name, const char *word) {
   int right = 0, wrong = 0, len = strlen(word);
-  char *unknown_word = malloc(len);
+  char *unknown_word = malloc(len + 1);
   char already_guessed[26] = "";
 
   for (int i = 0; i < len; i++) {
