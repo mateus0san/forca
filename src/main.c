@@ -14,6 +14,7 @@ int play_again() {
   return ((op == 'S' || op == 's') && c == '\n') ? 1 : 0;
 }
 
+//Wallace gabriel comentou aqui 
 int main(int argc, char *argv[]) {
   srand(time(NULL));
 
