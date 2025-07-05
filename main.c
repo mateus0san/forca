@@ -52,8 +52,9 @@ int play_again() {
 // return one string in argv
 char *get_file(int argc, char *argv[]) {
   if (--argc < 1) {
-    fprintf(stderr, "Forca: bad usage\n");
-    return NULL;
+    char *p = malloc(strlen("programacao") + 1);
+    strcpy(p, "programacao");
+    return p;
   }
 
   int index = (rand() % argc) + 1;
