@@ -253,8 +253,7 @@ void guess_char(const char guess, char *already_guessed, const char *word,
     *wrong += 1;
 }
 
-void guess_string(const char *guess, char *already_guessed, const char *word, char *unknown_word, int *wrong, int len_guess) {
-  strcat(already_guessed, guess);
+void guess_string(const char *guess, const char *word, char *unknown_word, int *wrong, int len_guess) {
   if (strcmp(word, guess) == 0) {
     strcpy(unknown_word, word);
     return;
@@ -291,7 +290,7 @@ int take_guesses(char *already_guessed, const char *word, char *unknown_word, in
   if ((len_guess = strlen(guess)) == 1)
     guess_char(guess[0], already_guessed, word, unknown_word, right, wrong);
   else if (len_guess > 1)
-    guess_string(guess, already_guessed, word, unknown_word, wrong, len_guess);
+    guess_string(guess, word, unknown_word, wrong, len_guess);
   else {
     fprintf(stderr, "Forca: invalid guess %s\n", guess);
     system("sleep 1");
