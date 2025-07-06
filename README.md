@@ -1,24 +1,21 @@
 # Forca
 
-## Source code
-O código consiste na `main.c`, `forca.h` e `forca.c`.
-O arquivo main.c é bem descritivo, um loop onde selecionamos
-um arquivo aleatoriamente, depois aleatoriamente, selecionamos
-um palavra do arquivo, e por fim, começamos o jogo usando o
-nome do arquivo e a palavra selecionada.
+##
+Criando uma branch para escrever um código mais adequado a disciplina de
+PROGII, o objetivo é passar pelos assuntos lecionados na disciplina de
+uma maneira mais coesa e organizada. O código terá mais comentários do
+que deveria em um código real, para facilitar o aprendizado e busca de
+informação.
 
-## Usabilidade
-O programa deve receber nome de arquivos como parâmetros,
-arquivos que devem possuir no máximo 50 palavras e preferencialmente
-o nome do arquivo deve estar relacionado com as palavras, o nome do
-arquivo serve como dica para adivinhar a palavra.
-
-O usuário pode digitar letras de A-Za-z ou palavras como `python` ou
-`rust programming language`, erros serão reletados caso 
-o usurário informe palavras fora desse padrão.
-
-### Executando e compilando
+## Commits
+O histórico de commits é importante para entendermos a evolução do projeto.
+Os commits deverão fazer uma coisa só ou de uma maneira muita organizada
+que faça sentido. Exemplos:
 ```bash
-gcc main.c forca.c
-./a.out file1 file2 ...
+git commit -m 'Comentando a função foobar()'
+git commit -m 'Adicionando um subrotina para tratar a variável foo'
+git commit -m 'Removendo parâmetro que não é utilizado'
+git commit -m 'Refatorando a função soma'
 ```
+Um commit específico, que faz uma coisa. As coisas começam a ficar baguçadas
+se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
