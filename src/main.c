@@ -3,9 +3,14 @@
 
 /* lista de palavras, caso nenhum banco de palavras seja informado (arquivo)
    use a lista de palavras
+
+   Isso é um array de ponteiros, possuem propriedades interessantes, como por
+   exemplo, perceba que as strings possuem tamanhos diferentes, em um array
+   fixo, programacao[10][10], você teria 10 strings com 10 posições, e mesmo 
 */
-/* a lista será movido para um arquivo .h */
+
 const char *programacao[] = {
+// a lista será movido para um arquivo .h futuramente 
   "gcc",
   "git",
   "github",
