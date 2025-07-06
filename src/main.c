@@ -1,26 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include "forca.h" // cabaçalho para lidar com a lógica da forca
 
-/* lista de palavras, caso nenhum banco de palavras seja informado (arquivo)
-   use a lista de palavras
-
-   Isso é um array de ponteiros, possuem propriedades interessantes, como por
-   exemplo, perceba que as strings possuem tamanhos diferentes, em um array
-   fixo, PROGRAMACAO[10][10], você teria 10 strings com 10 posições, uma
-   string como "python", não usária as 10 posições, já com array de ponteiros
-   a string gcc só ocupa 3 posições +1 com o '\0'(nulo no final da string)
-*/
-
-const char *PROGRAMACAO[] = {
-// a lista será movido para um arquivo .h futuramente 
-  "gcc",
-  "git",
-  "github",
-  "python",
-  "rust",
-  "programacao orientada a objetos",
-  "" // string vazia para idicar fim da lista
-};
 
 int main(void) {
   // test para a lista de palavras PROGRAMACAO, isso será removido
