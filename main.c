@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
       exit(EXIT_FAILURE);
     }
 
-      system("clear");
+      system("cls");
       start_game(file_name, word);
       free(word);
   } while (play_again());  
@@ -310,7 +310,7 @@ void start_game(const char *file_name, const char *word) {
   unknown_word[len] = '\0';
   while (drawn_game(file_name, word, unknown_word, right, wrong, already_guessed)) {
     take_guesses(already_guessed, word, unknown_word, &right, &wrong);
-    system("clear");
+    system("cls");
   }
 
   free(unknown_word);
