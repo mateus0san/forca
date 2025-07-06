@@ -1,7 +1,7 @@
 # Forca
 
 ##
-O objetivo é passar pelos assuntos lecionados na disciplina de
+O objetivo é passar pelos assuntos lecionados na disciplina(PROGII) de
 uma maneira mais coesa e organizada. O código terá mais comentários do
 que deveria em um código real, para facilitar o aprendizado e busca de
 informação.
