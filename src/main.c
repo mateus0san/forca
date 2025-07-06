@@ -19,13 +19,13 @@ const char *PROGRAMACAO[] = {
   "python",
   "rust",
   "programacao orientada a objetos",
-  ""
+  "" // string vazia para idicar fim da lista
 };
 
 int main(void) {
-  
   // test para a lista de palavras PROGRAMACAO, isso será removido
   for (int i = 0; strcmp(PROGRAMACAO[i], "") != 0; i++) {
     printf("%s\n", PROGRAMACAO[i]);
   }
+
 }
