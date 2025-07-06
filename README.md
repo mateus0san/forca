@@ -1,8 +1,8 @@
 # Forca
 
-##
+## PROGRAMAÇÃO II
 O objetivo é passar pelos assuntos lecionados na disciplina(PROGII) de
-uma maneira mais coesa e organizada. O código terá mais comentários do
+uma maneira coesa e organizada. O código terá mais comentários do
 que deveria em um código real, para facilitar o aprendizado e busca de
 informação.
 
@@ -18,3 +18,13 @@ git commit -m 'Refatorando a função soma'
 ```
 Um commit específico, que faz uma coisa. As coisas começam a ficar baguçadas
 se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
+
+## História do projeto
+Os commits contam a história do projeto. 3° vezez que o projeto começou do zero
+
+## Download com git e compilando com gcc
+```bash
+git clone https://github.com/mateus0san/forca.git
+cd forca/src
+gcc main.c forca_arquivo.c
+```
