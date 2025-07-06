@@ -7,7 +7,8 @@
    Isso é um array de ponteiros, possuem propriedades interessantes, como por
    exemplo, perceba que as strings possuem tamanhos diferentes, em um array
    fixo, PROGRAMACAO[10][10], você teria 10 strings com 10 posições, uma
-   string como "python", não usária as 10 posições
+   string como "python", não usária as 10 posições, já com array de ponteiros
+   a string gcc só ocupa 3 posições +1 com o '\0'(nulo no final da string)
 */
 
 const char *PROGRAMACAO[] = {
