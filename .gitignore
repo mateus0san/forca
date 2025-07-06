@@ -1,3 +1,5 @@
-*.exe
+# Ignorando Artefatos de compilição
+*.o
 *.out
-
+*.gch
+*.exe
