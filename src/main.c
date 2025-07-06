@@ -6,10 +6,11 @@
 
    Isso é um array de ponteiros, possuem propriedades interessantes, como por
    exemplo, perceba que as strings possuem tamanhos diferentes, em um array
-   fixo, programacao[10][10], você teria 10 strings com 10 posições, e mesmo 
+   fixo, PROGRAMACAO[10][10], você teria 10 strings com 10 posições, uma
+   string como "python", não usária as 10 posições
 */
 
-const char *programacao[] = {
+const char *PROGRAMACAO[] = {
 // a lista será movido para um arquivo .h futuramente 
   "gcc",
   "git",
@@ -22,8 +23,8 @@ const char *programacao[] = {
 
 int main(void) {
   
-  // test para a lista de palavras programacao, isso será removido
-  for (int i = 0; strcmp(programacao[i], "") != 0; i++) {
-    printf("%s\n", programacao[i]);
+  // test para a lista de palavras PROGRAMACAO, isso será removido
+  for (int i = 0; strcmp(PROGRAMACAO[i], "") != 0; i++) {
+    printf("%s\n", PROGRAMACAO[i]);
   }
 }
