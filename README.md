@@ -55,3 +55,16 @@ cmake ..
 ```
 > **ATENÇÃO:** Novamente, recompilar usando uma IDE depende da ferramenta, e provavelmente o
 >  processo é igual a compilar.
+
+## Executando
+Após compilar o binário, dentro do diretório build/, para executar rode:
+Linux
+```bash
+./forca
+```
+
+Windows
+```bash
+.\forca
+```
+> **Nota:** Clicar no binário talvez o execute.
