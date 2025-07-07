@@ -7,7 +7,8 @@ const char **palavras_retorne_lista_padrao() {
 
 
   /* após ler os comentários de palavras.h
-     adicione aqui a nova lista de palavras */
+     adicione aqui a nova lista de palavras
+     lembre de atualizar o cmake após adicionar */
   switch (i) {
     case 0:
       return palavras_programacao;
