@@ -2,6 +2,12 @@
 #ifndef FORCA_H
 #define FORCA_H
 
-extern const char *forca_arquivo_prog_palavras[];
+/* declarações para forca_aquivo.h */
+
+/* caso o usuário não forneca um arquivo para palavras
+   ou ocorra algum erro com o arquivo */
+const char **forca_arquivo_carregar_fallback();
+
+/* fim das declarações de forca_arquivo.h */
 
 #endif /* forca.h incluído */
