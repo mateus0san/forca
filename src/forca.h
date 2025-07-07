@@ -2,6 +2,6 @@
 #ifndef FORCA_H
 #define FORCA_H
 
-extern const char *PROGRAMACAO[];
+extern const char *forca_arquivo_prog_palavras[];
 
 #endif /* forca.h incluído */

@@ -13,7 +13,7 @@
    string como "python", não usaria as 10 posições, já com array de ponteiros
    a string gcc só ocupa 3 posições +1 com o '\0'(nulo no final da string)
 */
-const char *PROGRAMACAO[] = {
+const char *forca_arquivo_prog_palavras[] = {
   "gcc",
   "git",
   "github",
