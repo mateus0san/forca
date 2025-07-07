@@ -1,7 +1,7 @@
 # Forca
 
 ## PROGRAMAÇÃO II
-O objetivo é passar pelos assuntos lecionados na disciplina(PROGII) de
+O objetivo é revisar os assuntos lecionados na disciplina(PROGII) de
 uma maneira coesa e organizada. O código terá mais comentários do
 que deveria em um código real, para facilitar o aprendizado e busca de
 informação.
@@ -16,11 +16,11 @@ git commit -m 'Adicionando um subrotina para tratar a variável foo'
 git commit -m 'Removendo parâmetro que não é utilizado'
 git commit -m 'Refatorando a função soma'
 ```
-Um commit específico, que faz uma coisa. As coisas começam a ficar baguçadas
+Um commit específico, que faz uma coisa. As coisas começam a ficar bagunçadas
 se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
 
 ## História do projeto
-Os commits contam a história do projeto. 3 vezez que o projeto começou do zero
+Os commits contam a história do projeto. 3 vezez que o projeto começou do zero.
 
 ## Download com git
 ```bash
@@ -38,7 +38,7 @@ Linux
 ```bash
 ./build.sh
 ```
-Compilação usando IDE são específicas, procure sobre a sua no google.
+Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
 
 ## Desenvolvedores
