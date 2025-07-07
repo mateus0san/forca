@@ -1,3 +1,7 @@
+/* forca_aquivo.c deve lidar com arquivos relacionados ao
+   jogo e em caso de erro, chamar fallback para usar uma
+   lista de palavras padrão, definida em palavras/palavras.h
+*/ 
 #include "palavras/palavras.h"
 #include "forca.h"
 
