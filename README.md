@@ -58,6 +58,7 @@ cmake ..
 
 ## Executando
 Após compilar o binário, dentro do diretório build/, para executar rode:
+
 Linux
 ```bash
 ./forca
