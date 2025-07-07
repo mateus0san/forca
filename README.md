@@ -26,5 +26,5 @@ Os commits contam a história do projeto. 3° vezez que o projeto começou do ze
 ```bash
 git clone https://github.com/mateus0san/forca.git
 cd forca/src
-gcc main.c forca_arquivo.c
+gcc main.c forca_arquivo.c palavras/programacao.c
 ```
