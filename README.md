@@ -40,3 +40,14 @@ Linux
 ```
 Compilação usando IDE são específicas, procure sobre a sua no google.
 No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
+
+## Desenvolvedores
+Para recompilar os binários, dentro do diretório build rode: 
+```bash
+cmake --build .
+```
+Para atualizar as configurações de build após modificar algo em CMakeLists.txt, dentro do
+diretório build rode:
+```bash
+cmake ..
+```
