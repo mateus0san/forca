@@ -20,11 +20,23 @@ Um commit específico, que faz uma coisa. As coisas começam a ficar baguçadas
 se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
 
 ## História do projeto
-Os commits contam a história do projeto. 3° vezez que o projeto começou do zero
+Os commits contam a história do projeto. 3 vezez que o projeto começou do zero
 
-## Download com git e compilando com gcc
+## Download com git
 ```bash
 git clone https://github.com/mateus0san/forca.git
-cd forca/src
-gcc main.c forca_arquivo.c palavras/programacao.c
 ```
+
+## Primeira vez compilando
+Dentro do diretório forca, com CMake instalado, escolha uma das opções abaixo, Linux ou Windows
+### cmake
+Windows
+```bat
+build.bat
+```
+Linux
+```bash
+./build.sh
+```
+Compilação usando IDE são específicas, procure sobre a sua no google.
+No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
