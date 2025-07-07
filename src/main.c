@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 #include "forca.h" // cabaçalho para lidar com a lógica da forca
 
 
 int main(void) {
+  // útil para gerar números mais 'aleatórios' com rand()
+  srand(time(NULL));
+
   const char **lista_palavras = forca_arquivo_carregar_fallback();
 
   // test para a lista de palavras, isso será removido
