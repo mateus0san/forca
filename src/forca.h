@@ -4,9 +4,7 @@
 
 /* declarações para forca_aquivo.h */
 
-/* caso o usuário não forneca um arquivo para palavras
-   ou ocorra algum erro com o arquivo */
-const char **forca_arquivo_carregar_fallback();
+const char **forca_arquivo_carregar_lista(int, char **);
 
 /* fim das declarações de forca_arquivo.h */
 
