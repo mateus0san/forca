@@ -1,9 +1,3 @@
-/* forca_arquivo.c lida com a logica necessária para lidar com arquivos */
-//
-// 
-//
-//
-//
 /* lista de palavras, caso nenhum banco de palavras seja informado (arquivo)
    use a lista de palavras
 

@@ -10,8 +10,8 @@ include_directories(src src/palavras)
 set(SOURCES
     src/main.c
     src/forca_arquivo.c
-    src/palavras/programacao.c
-    src/palavras/animais.c
+    src/palavras/palavras_arquivos/programacao.c
+    src/palavras/palavras_arquivos/animais.c
     src/palavras/palavras.c
 )
 
