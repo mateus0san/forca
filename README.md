@@ -34,12 +34,14 @@ Windows
 ```bat
 build.bat
 ```
+> **NOTA:** No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
+
 Linux
 ```bash
 ./build.sh
 ```
-Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
-No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
+
+> **ATENÇÃO:** Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 
 ## Desenvolvedores
 Para recompilar os binários, dentro do diretório build rode: 
@@ -51,3 +53,5 @@ diretório build rode:
 ```bash
 cmake ..
 ```
+> **ATENÇÃO:** Novamente, recompilar usando uma IDE depende da ferramenta, e provavelmente o
+>  processo é igual a compilar.
