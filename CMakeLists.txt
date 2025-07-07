@@ -11,6 +11,8 @@ set(SOURCES
     src/main.c
     src/forca_arquivo.c
     src/palavras/programacao.c
+    src/palavras/animais.c
+    src/palavras/palavras.c
 )
 
 add_executable(forca ${SOURCES})
