@@ -20,7 +20,7 @@ Um commit específico, que faz uma coisa. As coisas começam a ficar bagunçadas
 se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
 
 ## História do projeto
-Os commits contam a história do projeto. 3 vezez que o projeto começou do zero.
+O projeto foi reiniciado do zero 3 vezes. Isso reflete o processo real de desenvolvimento: errar, recomeçar, refatorar. Os commits contam essa história.
 
 ## Download com git
 ```bash
