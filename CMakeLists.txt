@@ -12,6 +12,7 @@ set(SOURCES
     src/forca_arquivo.c
     src/palavras/palavras_arquivos/programacao.c
     src/palavras/palavras_arquivos/animais.c
+    src/palavras/palavras_arquivos/tecnologia.c
     src/palavras/palavras.c
 )
 

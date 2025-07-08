@@ -23,9 +23,10 @@ struct PalavraLista {
 */ 
 
 // atualize o numero de palavras_funcoes caso adicione ou remova alguma
-#define NUMERO_DE_FUNCOES 2
+#define NUMERO_DE_FUNCOES 3
 struct PalavraLista palavras_programacao_funcao();
 struct PalavraLista palavras_animais_funcao();
+struct PalavraLista palavras_tecnologia_funcao();
 
 // função utilizada em forca_arquivo.c
 struct PalavraLista palavras_retorne_lista_padrao();

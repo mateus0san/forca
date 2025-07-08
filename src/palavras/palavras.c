@@ -16,6 +16,8 @@ struct PalavraLista palavras_retorne_lista_padrao() {
   switch (i) {
     case 1:
       return palavras_animais_funcao();
+    case 2:
+      return palavras_tecnologia_funcao();
     default:
       return palavras_programacao_funcao();
   }
