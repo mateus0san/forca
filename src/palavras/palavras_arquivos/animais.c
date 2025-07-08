@@ -1,3 +1,4 @@
+#include "../palavras.h"
 const char *const palavras_animais[] = {
   "Gato",
   "Cachorro",
@@ -51,3 +52,7 @@ const char *const palavras_animais[] = {
   "Morcego",
   ""
 };
+
+const char * const *palavras_animais_funcao() {
+  return palavras_animais;
+}

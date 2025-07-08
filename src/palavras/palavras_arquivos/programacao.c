@@ -26,6 +26,8 @@
    => palavras_programacao é um array de ponteiros constantes para char constantes
 */
    
+#include "../palavras.h"
+
 const char *const palavras_programacao[] = {
   "Algoritmo",
   "Codigo",
@@ -79,3 +81,7 @@ const char *const palavras_programacao[] = {
   "Docker",
   "" // string vazia para idicar fim da lista
 };
+
+const char *const *palavras_programacao_funcao() {
+  return palavras_programacao;
+}
