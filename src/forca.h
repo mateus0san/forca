@@ -18,7 +18,7 @@ struct ForcaGame {
   struct ForcaPalavra palavra_dados;
 };
 
-struct ForcaGame forca_arquivo_carregar_lista(int, char **);
+struct ForcaGame forca_arquivo_dados_novogame(int, char **);
 void free_ForcaGame(struct ForcaGame);
 
 /* fim das declarações de forca_arquivo.h */

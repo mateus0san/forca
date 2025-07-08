@@ -19,7 +19,7 @@ static char *escolher_palavra_lista(const char *const *); // dado uma lista de p
 static struct ForcaGame new_ForcaGame(struct ForcaGame, struct PalavraLista);
 static struct ForcaGame carregar_fallback(void);
 
-struct ForcaGame forca_arquivo_carregar_lista(int argc, char *argv[]) {
+struct ForcaGame forca_arquivo_dados_novogame(int argc, char *argv[]) {
   /* fazer mais tarde
     lógica para lidar com argc e argv, por hora considerar que
     o usuário não fornece argumentos pela linha de comando
