@@ -13,7 +13,7 @@ struct ForcaPalavra {
 };
 struct ForcaGame {
   int numero_acertos;
-  int numero_errors;
+  int numero_erros;
   char caracteres_chutados[27]; // 26 letras do alfabeto + '\0' = 27
   struct ForcaPalavra palavra_dados;
 };
