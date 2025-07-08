@@ -11,8 +11,8 @@
   função, aqui começamos a ver como nasce o conceito de
   public e private do java, o pub do rust, e outras linguagens.
 */
-static const char *const *forca_arquivo_carregar_fallback() {
-  return palavras_retorne_lista_padrao();
+static const char *const *forca_arquivo_carregar_fallback(char *nome_lista) {
+  return palavras_retorne_lista_padrao(nome_lista);
 }
 
 const char *const *forca_arquivo_carregar_lista(int argc, char *argv[]) {
@@ -33,5 +33,10 @@ const char *const *forca_arquivo_carregar_lista(int argc, char *argv[]) {
     
   /* considerando que os casos anteriores não deram certo
     precisamos ter uma fallback */  
-  return forca_arquivo_carregar_fallback();
+
+  // isso virará uma struct, possiveis campos
+  // lista_de_palavras
+  // nome_da_lista;
+  char *nome_lista;
+  return forca_arquivo_carregar_fallback(nome_lista);
 }

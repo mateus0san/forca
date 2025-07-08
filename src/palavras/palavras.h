@@ -22,6 +22,6 @@ const char *const *palavras_programacao_funcao();
 const char *const *palavras_animais_funcao();
 
 // função utilizada em forca_arquivo.c
-const char *const *palavras_retorne_lista_padrao();
+const char *const *palavras_retorne_lista_padrao(char *);
 
 #endif
