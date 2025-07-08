@@ -4,7 +4,9 @@
 
 /* declarações para forca_aquivo.h */
 
-// guarda informações da palavra
+/* guarda informações da palavra
+   apos usar essa struct com forca_arquivo_carregar_lista
+   use free_ForcaGame */
 struct ForcaPalavra {
   char *dica;    // será equivalente a dica[];
   char *palavra; // será equivalente a palavra[];
@@ -12,11 +14,12 @@ struct ForcaPalavra {
 struct ForcaGame {
   int numero_acertos;
   int numero_errors;
-  char *caracteres_chutados;
+  char caracteres_chutados[27]; // alfabeto + '\0'
   struct ForcaPalavra palavra_dados;
 };
 
 struct ForcaGame forca_arquivo_carregar_lista(int, char **);
+void free_ForcaGame(struct ForcaGame);
 
 /* fim das declarações de forca_arquivo.h */
 

@@ -5,7 +5,7 @@
    exemplo, perceba que as strings possuem tamanhos diferentes, em um array
    fixo, PROGRAMACAO[10][10], você teria 10 strings com 10 posições, uma
    string como "python", não usaria as 10 posições, já com array de ponteiros
-   a string gcc só ocupa 3 posições +1 com o '\0'(nulo no final da string)
+   a string 'gcc' só ocupa 3 posições +1 com o '\0'(nulo no final da string)
 */
 
 /*
@@ -81,7 +81,7 @@ const char *const palavras_programacao[] = {
   "Git",
   "Nodejs",
   "Docker",
-  "" // string vazia para idicar fim da lista
+  NULL // null para idicar fim da lista
 };
 
 struct PalavraLista palavras_programacao_funcao() {

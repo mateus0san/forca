@@ -55,7 +55,7 @@ const char *const palavras_animais[] = {
   "Anta",
   "Arraia",
   "Morcego",
-  ""
+  NULL
 };
 
 struct PalavraLista palavras_animais_funcao() {
