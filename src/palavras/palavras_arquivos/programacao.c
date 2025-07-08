@@ -7,7 +7,26 @@
    string como "python", não usaria as 10 posições, já com array de ponteiros
    a string gcc só ocupa 3 posições +1 com o '\0'(nulo no final da string)
 */
-const char *palavras_programacao[] = {
+
+/*
+  'recursive descent parser', uma boa pros estudos, mas não pros padrões da disciplina
+  de progII, entenda que isso é apenas um array de ponteiros.
+
+  C usa um 'recursive descent parser' para analisar suas declarações.
+  
+  pode ignorar esse campo de comentário se quiser
+  
+  palavras_programacao[]           -> é um array de...
+
+   * const                         -> é um array de ponteiros constantes para...
+
+   const char                      -> é um array de ponteiros constantes para caracteres constantes
+
+   const char * const palavras_programacao[];
+   => palavras_programacao é um array de ponteiros constantes para char constantes
+*/
+   
+const char *const palavras_programacao[] = {
   "Algoritmo",
   "Codigo",
   "Variavel",

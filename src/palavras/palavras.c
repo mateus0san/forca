@@ -1,7 +1,7 @@
 #include "palavras.h"
 #include <stdlib.h>
 
-const char **palavras_retorne_lista_padrao() {
+const char *const *palavras_retorne_lista_padrao() {
   // gera um número aleatório entre 0 e PALAVRA_LISTA_NUMERO - 1
   unsigned i = rand() % PALAVRA_LISTA_NUMERO;  
 

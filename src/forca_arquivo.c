@@ -11,11 +11,11 @@
   função, aqui começamos a ver como nasce o conceito de
   public e private do java, o pub do rust, e outras linguagens.
 */
-static const char **forca_arquivo_carregar_fallback() {
+static const char *const *forca_arquivo_carregar_fallback() {
   return palavras_retorne_lista_padrao();
 }
 
-const char **forca_arquivo_carregar_lista(int argc, char *argv[]) {
+const char *const *forca_arquivo_carregar_lista(int argc, char *argv[]) {
   /* fazer mais tarde
     lógica para lidar com argc e argv, por hora considerar que
     o usuário não fornece argumentos pela linha de comando

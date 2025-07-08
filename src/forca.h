@@ -4,7 +4,7 @@
 
 /* declarações para forca_aquivo.h */
 
-const char **forca_arquivo_carregar_lista(int, char **);
+const char *const *forca_arquivo_carregar_lista(int, char **);
 
 /* fim das declarações de forca_arquivo.h */
 

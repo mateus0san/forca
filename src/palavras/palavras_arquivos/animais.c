@@ -1,4 +1,4 @@
-const char *palavras_animais[] = {
+const char *const palavras_animais[] = {
   "Gato",
   "Cachorro",
   "Cavalo",
