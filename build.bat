@@ -13,6 +13,5 @@ cmake ..
 REM Build the project
 cmake --build .
 
-echo Build finished successfully!
 pause
 
