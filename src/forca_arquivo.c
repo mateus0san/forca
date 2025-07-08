@@ -15,7 +15,7 @@
   public e private do java, o pub do rust, e outras linguagens.
 */
 
-static char *escolher_palavra_lista(struct PalavraLista);
+static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
 static struct ForcaGame new_ForcaGame(struct ForcaGame, struct PalavraLista);
 static struct ForcaGame carregar_fallback(void);
 
@@ -52,15 +52,13 @@ static struct ForcaGame carregar_fallback() {
   /* inicializando a struct
      um comportamento semelhante a inicialização
      de objetos(Programação orientada a objetos)
-     em uma função defina em um escopo privado (static)
+     em uma função definada em um escopo privado (static).
      game_dados seria o self :) */
   return new_ForcaGame(game_dados, lista);
 }
 
-
-
 static struct ForcaGame new_ForcaGame(struct ForcaGame game_dados, struct PalavraLista lista_palavras) {
-   game_dados.palavra_dados.palavra = escolher_palavra_lista(lista_palavras);
+   game_dados.palavra_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
    game_dados.palavra_dados.dica = lista_palavras.nome_lista;
    game_dados.caracteres_chutados[0] = '\0';
    game_dados.numero_acertos = game_dados.numero_errors = 0;
@@ -73,19 +71,19 @@ void free_ForcaGame(struct ForcaGame game_dados) {
   free(game_dados.palavra_dados.dica);  
 }
 
-static char *escolher_palavra_lista(struct PalavraLista lista) {
+static char *escolher_palavra_lista(const char *const lista_palavras[]) {
   int count = 0; // quantas palavras há na lista
 
   /* a definição de lista de palavras aqui foi definida no
      palavras.h/programacao.c, onde no final da lista a um NULL */
-  while (lista.lista_palavras[count] != NULL) {
+  while (lista_palavras[count] != NULL) {
     count++;
   }
 
   unsigned index = rand() % count;
 
-  char *palavra = malloc(strlen(lista.lista_palavras[index]) + 1);
-  strcpy(palavra, lista.lista_palavras[index]);
+  char *palavra = malloc(strlen(lista_palavras[index]) + 1);
+  strcpy(palavra, lista_palavras[index]);
 
   return palavra;
 }

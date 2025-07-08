@@ -15,7 +15,7 @@ struct PalavraLista {
    
 /* para adicionar mais palavras:
    crie um arquivo .c semelhante a programação.c no diretório palavras/palavras_arquivos
-   (não esqueça da string vazia no último item e a função)
+   (não esqueça do NULL no último item e a função)
    exemplo: palavras/palavras_arquivos/carros.c
    depois adicione em palavras.h, junto com as outras funções:
    const char *const *carros();
