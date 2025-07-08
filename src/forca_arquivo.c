@@ -21,7 +21,7 @@ static struct ForcaGame forca_arquivo_carregar_fallback(struct ForcaGame game_da
   struct PalavraLista lista = palavras_retorne_lista_padrao();
 
   // inicializando a struct e imprimindo para casos de teste
-  game_dados.palavra_dados.dica = lista.nome_lista;
+  game_dados.palavra_dados.dica = lista.nome_lista; // usar free em dica depois
   game_dados.palavra_dados.palavra = malloc(strlen(lista.lista_palavras[0]));
   strcpy(game_dados.palavra_dados.palavra, lista.lista_palavras[0]);
   game_dados.numero_acertos = 0;
