@@ -2,6 +2,12 @@
 #ifndef PALAVRAS_H
 #define PALAVRAS_H
 
+
+struct PalavraLista {
+  const char *const *lista_palavras;
+  char *nome_lista;
+};
+
 /*
    essa funcionalidade não é boa para acrescentar muitos arquivos,
    não acrescente muitos arquivos
@@ -18,10 +24,10 @@
 
 // atualize o numero de palavras_funcoes caso adicione ou remova alguma
 #define NUMERO_DE_FUNCOES 2
-const char *const *palavras_programacao_funcao();
-const char *const *palavras_animais_funcao();
+struct PalavraLista palavras_programacao_funcao();
+struct PalavraLista palavras_animais_funcao();
 
 // função utilizada em forca_arquivo.c
-const char *const *palavras_retorne_lista_padrao(char *);
+struct PalavraLista palavras_retorne_lista_padrao();
 
 #endif

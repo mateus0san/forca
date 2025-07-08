@@ -1,4 +1,9 @@
 #include "../palavras.h"
+#include <stdlib.h>
+#include <string.h>
+
+
+static char *animais = "animais";
 const char *const palavras_animais[] = {
   "Gato",
   "Cachorro",
@@ -53,6 +58,11 @@ const char *const palavras_animais[] = {
   ""
 };
 
-const char * const *palavras_animais_funcao() {
-  return palavras_animais;
+struct PalavraLista palavras_animais_funcao() {
+  struct PalavraLista lista;
+
+  lista.lista_palavras = palavras_animais;
+  lista.nome_lista = malloc(strlen(animais) + 1);
+  strcpy(lista.nome_lista, animais);
+  return lista;
 }

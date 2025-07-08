@@ -3,7 +3,11 @@
    lista de palavras padrão, definida em palavras/palavras.h
 */ 
 #include "palavras/palavras.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "forca.h"
+
 
 /* funções declaradas com static estão limitadas ao seu escopo,
   no caso, forca_arquivo_carregar_fallback() está limitada a
@@ -11,11 +15,27 @@
   função, aqui começamos a ver como nasce o conceito de
   public e private do java, o pub do rust, e outras linguagens.
 */
-static const char *const *forca_arquivo_carregar_fallback(char *nome_lista) {
-  return palavras_retorne_lista_padrao(nome_lista);
+
+static struct ForcaGame forca_arquivo_carregar_fallback(struct ForcaGame game_dados) {
+
+  struct PalavraLista lista = palavras_retorne_lista_padrao();
+
+  // inicializando a struct e imprimindo para casos de teste
+  game_dados.palavra_dados.dica = lista.nome_lista;
+  game_dados.palavra_dados.palavra = malloc(strlen(lista.lista_palavras[0]));
+  strcpy(game_dados.palavra_dados.palavra, lista.lista_palavras[0]);
+  game_dados.numero_acertos = 0;
+  game_dados.numero_errors = 0;
+
+  printf("palavra_dados.palavra: %s\n", game_dados.palavra_dados.palavra);
+  printf("palavra_dados.dica: %s\n", game_dados.palavra_dados.dica);
+  printf("ForcaGame.numero_acertos: %d\n", game_dados.numero_acertos);
+  printf("ForcaGame.numero_erros: %d\n", game_dados.numero_errors);
+
+  return game_dados;
 }
 
-const char *const *forca_arquivo_carregar_lista(int argc, char *argv[]) {
+struct ForcaGame forca_arquivo_carregar_lista(int argc, char *argv[]) {
   /* fazer mais tarde
     lógica para lidar com argc e argv, por hora considerar que
     o usuário não fornece argumentos pela linha de comando
@@ -34,9 +54,6 @@ const char *const *forca_arquivo_carregar_lista(int argc, char *argv[]) {
   /* considerando que os casos anteriores não deram certo
     precisamos ter uma fallback */  
 
-  // isso virará uma struct, possiveis campos
-  // lista_de_palavras
-  // nome_da_lista;
-  char *nome_lista;
-  return forca_arquivo_carregar_fallback(nome_lista);
+  struct ForcaGame game_dados;
+  return forca_arquivo_carregar_fallback(game_dados);
 }

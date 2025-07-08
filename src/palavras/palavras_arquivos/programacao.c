@@ -27,6 +27,8 @@
 */
    
 #include "../palavras.h"
+#include <stdlib.h>
+#include <string.h>
 
 const char *const palavras_programacao[] = {
   "Algoritmo",
@@ -82,6 +84,12 @@ const char *const palavras_programacao[] = {
   "" // string vazia para idicar fim da lista
 };
 
-const char *const *palavras_programacao_funcao() {
-  return palavras_programacao;
+struct PalavraLista palavras_programacao_funcao() {
+  struct PalavraLista lista;
+  char *programacao = "programacao";
+
+  lista.lista_palavras = palavras_programacao;
+  lista.nome_lista = malloc(strlen(programacao) + 1);
+  strcpy(lista.nome_lista, programacao);
+  return lista;
 }
