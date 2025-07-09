@@ -28,13 +28,13 @@ git clone https://github.com/mateus0san/forca.git
 ```
 
 ## Primeira vez compilando
-Dentro do diretório forca, com CMake instalado, escolha uma das opções abaixo, Linux ou Windows
+Dentro do diretório forca, com CMake instalado e configurado, escolha uma das opções abaixo, Linux ou Windows
 ### cmake
 Windows
 ```bat
 build.bat
 ```
-> **NOTA:** No Windows, com CMake instalando, a compilação pode ocorrer se você clicar no build.bat
+> **NOTA:** No Windows, com CMake instalando e configurado, a compilação pode ocorrer se você clicar no build.bat
 
 Linux
 ```bash
@@ -43,7 +43,7 @@ Linux
 
 > **ATENÇÃO:** Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 
-## Desenvolvedores
+## Desenvolvedores recompilando usando cmake
 Para recompilar os binários, dentro do diretório build rode: 
 ```bash
 cmake --build .
@@ -69,3 +69,17 @@ Windows
 .\forca
 ```
 > **Nota:** Clicar no binário talvez o execute.
+
+# Source coude Tree
+forca/
+├── src/
+│   ├── main.c
+│   ├── forca.h
+│   ├── forca_arquivo.c
+│   └── palavras/
+│       ├── palavras.h
+│       ├── palavras.c
+│       └── palavras_arquivos/
+│           ├── animais.c
+│           ├── programacao.c
+│           ├── tecnologia.c
