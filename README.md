@@ -70,7 +70,8 @@ Windows
 ```
 > **Nota:** Clicar no binário talvez o execute.
 
-# Source coude Tree
+## Source coude Tree
+```text
 forca/
 ├── src/
 │   ├── main.c
@@ -83,3 +84,4 @@ forca/
 │           ├── animais.c
 │           ├── programacao.c
 │           ├── tecnologia.c
+```
