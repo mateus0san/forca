@@ -22,3 +22,73 @@ void forca_desenhe(struct ForcaGame game_dados) {
   printf("erros: %d\n", game_dados.numero_erros);
   printf("chutes: %s\n", game_dados.caracteres_chutados);
 }
+
+//inclusao do desenho da forca
+
+void drawn_hangman(int error) {
+  switch (error) {
+    case 0:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |\n\
+             |\n\
+             |\n\
+             |\n");
+    break;
+    case 1:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |\n\
+             |\n\
+             |\n");
+    break;
+    case 2:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |       |\n\
+             |\n\
+             |\n");
+    break;
+    case 3:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\n\
+             |\n\
+             |\n");
+    break;
+    case 4:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |\n\
+             |\n");
+    break;
+    case 5:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |        \\\n\
+             |\n");
+    break;
+    case 6:
+      printf("\
+             +-------+\n\
+             |       |\n\
+             |       O\n\
+             |      /|\\\n\
+             |      / \\\n\
+             |\n");
+    break;
+  }
+}
