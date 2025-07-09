@@ -2,7 +2,8 @@
 #ifndef FORCA_H
 #define FORCA_H
 
-/* declarações para forca_aquivo.h */
+
+/* declarações para forca_arquivo.c */
 
 /* guarda informações da palavra
    apos usar essa struct com forca_arquivo_carregar_lista
@@ -21,6 +22,12 @@ struct ForcaGame {
 struct ForcaGame forca_arquivo_dados_novogame(int, char **);
 void free_ForcaGame(struct ForcaGame);
 
-/* fim das declarações de forca_arquivo.h */
+/* fim das declarações de forca_arquivo.c */
+
+/* declarações para forca_desenha.c */
+
+void forca_desenhe(struct ForcaGame);
+
+/*  fim das declarações para forca_desenha.c */
 
 #endif /* forca.h incluído */

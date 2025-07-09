@@ -41,6 +41,10 @@ struct ForcaGame forca_arquivo_dados_novogame(int argc, char *argv[]) {
   return carregar_fallback();
 }
 
+void free_ForcaGame(struct ForcaGame game_dados) {
+  free(game_dados.palavra_dados.palavra);
+  free(game_dados.palavra_dados.dica);  
+}
 
 static struct ForcaGame carregar_fallback() {
 
@@ -66,10 +70,6 @@ static struct ForcaGame new_ForcaGame(struct ForcaGame game_dados, struct Palavr
   return game_dados;
 }
 
-void free_ForcaGame(struct ForcaGame game_dados) {
-  free(game_dados.palavra_dados.palavra);
-  free(game_dados.palavra_dados.dica);  
-}
 
 static char *escolher_palavra_lista(const char *const lista_palavras[]) {
   int count = 0; // quantas palavras há na lista
