@@ -77,11 +77,12 @@ forca/
 │   ├── main.c
 │   ├── forca.h
 │   ├── forca_arquivo.c
+│   ├── forca_desenha.c
 │   └── palavras/
 │       ├── palavras.h
 │       ├── palavras.c
 │       └── palavras_arquivos/
 │           ├── animais.c
 │           ├── programacao.c
-│           ├── tecnologia.c
+│           └── tecnologia.c
 ```
