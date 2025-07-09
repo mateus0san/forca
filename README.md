@@ -70,7 +70,7 @@ Windows
 ```
 > **Nota:** Clicar no binário talvez o execute.
 
-## Source coude Tree
+## source code tree
 ```text
 forca/
 ├── src/
