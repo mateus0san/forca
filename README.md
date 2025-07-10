@@ -47,7 +47,7 @@ gcc main.c forca_arquivo.c forca_desenha.c palavras/palavras.c palavras/palavras
 ```
 > **ATENÇÃO:** Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 
-## Desenvolvedores recompilando usando cmake
+## Desenvolvedores recompilando usando cmake ou compilando pela primeira vez
 Para recompilar os binários, dentro do diretório build rode: 
 ```bash
 cmake --build .
