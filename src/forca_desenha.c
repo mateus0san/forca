@@ -15,6 +15,8 @@ void forca_desenhe(struct ForcaGame game_dados) {
   printf("acertos: %d\n", game_dados.numero_acertos);
   printf("erros: %d\n", game_dados.numero_erros);
   printf("chutes: %s\n", game_dados.caracteres_chutados);
+  printf("Palavra: %s\n", game_dados.palavra_dados.ad_palavra);
+  printf("%s\n", game_dados.palavra_dados.palavra);
 }
 
 // função que limpa a tela, compatível com linux e windows

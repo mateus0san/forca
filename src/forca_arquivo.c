@@ -1,7 +1,11 @@
 /* forca_aquivo.c deve lidar com arquivos relacionados ao
    jogo e em caso de erro, chamar fallback para usar uma
    lista de palavras padrão, definida em palavras/palavras.h
+
+   forca_arquivo.c deve retornar uma lista de palavras, será
+   nessário refatoração.
 */ 
+
 #include "palavras/palavras.h"
 #include <string.h>
 #include <stdlib.h>
@@ -18,6 +22,7 @@
 static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
 static struct ForcaGame new_ForcaGame(struct ForcaGame, struct PalavraLista);
 static struct ForcaGame carregar_fallback(void);
+static char *new_adivinha_palavra(char *);
 
 struct ForcaGame forca_arquivo_dados_novogame(int argc, char *argv[]) {
   /* fazer mais tarde
@@ -63,6 +68,7 @@ static struct ForcaGame carregar_fallback() {
 
 static struct ForcaGame new_ForcaGame(struct ForcaGame game_dados, struct PalavraLista lista_palavras) {
    game_dados.palavra_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
+   game_dados.palavra_dados.ad_palavra = new_adivinha_palavra(game_dados.palavra_dados.palavra); 
    game_dados.palavra_dados.dica = lista_palavras.nome_lista;
    game_dados.caracteres_chutados[0] = '\0';
    game_dados.numero_acertos = game_dados.numero_erros = 0;
@@ -86,4 +92,17 @@ static char *escolher_palavra_lista(const char *const lista_palavras[]) {
   strcpy(palavra, lista_palavras[index]);
 
   return palavra;
+}
+
+static char *new_adivinha_palavra(char *palavra) {
+  int len_palavra = strlen(palavra);
+  char *esconder_palavra = malloc(len_palavra + 1);
+
+  for (int i = 0; i < len_palavra; i++) {
+    esconder_palavra[i] = (palavra[i] == ' ') ? ' ' : '_';
+  }
+
+  esconder_palavra[len_palavra] = '\0';
+
+  return esconder_palavra;
 }

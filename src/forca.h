@@ -11,6 +11,7 @@
 struct ForcaPalavra {
   char *dica;    // será equivalente a dica[];
   char *palavra; // será equivalente a palavra[];
+  char *ad_palavra; // palavra para ser advinhada
 };
 struct ForcaGame {
   int numero_acertos;
