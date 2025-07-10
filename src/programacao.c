@@ -26,7 +26,7 @@
    => palavras_programacao é um array de ponteiros constantes para char constantes
 */
    
-#include "../palavras.h"
+#include "lib/palavras.h"
 #include <stdlib.h>
 #include <string.h>
 

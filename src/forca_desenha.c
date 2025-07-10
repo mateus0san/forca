@@ -1,6 +1,6 @@
 /* forca_desenha é responsável por mostrar informações do jogo */
 
-#include "forca_desenha.h"
+#include "lib/forca_desenha.h"
 #include <stdio.h>
 #include <stdlib.h>
 

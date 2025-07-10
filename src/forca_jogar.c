@@ -1,4 +1,4 @@
-#include "forca_desenha.h"
+#include "lib/forca_desenha.h"
 
 static struct ForcaDesenhe new_FocaDesenhe(struct ForcaGame);
 

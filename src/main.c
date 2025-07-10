@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-#include "forca.h" // cabaçalho para lidar com a lógica da forca
+#include "lib/forca.h" // cabaçalho para lidar com a lógica da forca
 
 
 int main(int argc, const char *const argv[]) {

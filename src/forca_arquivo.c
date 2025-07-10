@@ -7,7 +7,8 @@
    nessário refatoração.
 */ 
 
-#include "palavras/palavras.h"
+
+#include "lib/palavras.h"
 
 /* funções declaradas com static estão limitadas ao seu escopo,
   no caso, carregar_fallback() está limitada a
