@@ -40,7 +40,11 @@ Linux
 ```bash
 ./build.sh
 ```
-
+### GCC
+Muito ruim compilar assim...
+```c
+gcc main.c forca_arquivo.c forca_desenha.c palavras/palavras.c palavras/palavras_arquivos/animais.c palavras/palavras_arquivos/programacao.c palavras/palavras_arquivos/tecnologia.c
+```
 > **ATENÇÃO:** Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 
 ## Desenvolvedores recompilando usando cmake
