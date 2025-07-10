@@ -17,6 +17,7 @@ set(SOURCES
     src/animais.c
     src/tecnologia.c
     src/palavras.c
+    src/forca_string.c
 )
 
 add_executable(forca ${SOURCES})
