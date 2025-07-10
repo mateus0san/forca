@@ -12,7 +12,6 @@ struct ForcaPalavra {
 struct ForcaGame {
   int numero_acertos;
   int numero_erros;
-  char caracteres_chutados[27]; // 26 letras do alfabeto + '\0' = 27
   struct ForcaPalavra palavra_dados;
 };
 
@@ -28,10 +27,12 @@ void free_ForcaGame(struct ForcaGame);
 
 /* fim das declarações de forca_dados.c */
 
-/* declarações para forca_desenha.c */
+/* declarações para forca_jogar.c */
 
-void forca_desenhe(struct ForcaGame);
+// forca_jogar deve receber um struct retornada por forca_dados_novo_jogo
+// para começar o jogo
+void forca_jogar(struct ForcaGame);
 
-/*  fim das declarações para forca_desenha.c */
+/* fim das declarações para forca_jogar.c */
 
 #endif /* forca.h incluído */

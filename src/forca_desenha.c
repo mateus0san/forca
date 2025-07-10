@@ -1,6 +1,6 @@
 /* forca_desenha é responsável por mostrar informações do jogo */
 
-#include "forca.h"
+#include "forca_desenha.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,15 +8,32 @@ static void clear_screen();
 static void forca(int);
 
 
-void forca_desenhe(struct ForcaGame game_dados) {
+void forca_desenha(struct ForcaDesenha desenha_dados) {
   clear_screen();
-  printf("----------------------%s------------------------\n", game_dados.palavra_dados.dica);
-  forca(game_dados.numero_erros);
-  printf("acertos: %d\n", game_dados.numero_acertos);
-  printf("erros: %d\n", game_dados.numero_erros);
-  printf("chutes: %s\n", game_dados.caracteres_chutados);
-  printf("Palavra: %s\n", game_dados.palavra_dados.ad_palavra);
-  printf("%s\n", game_dados.palavra_dados.palavra);
+  printf("----------------------%s------------------------\n", desenha_dados.dica);
+  forca(desenha_dados.erros);
+  printf("erros: %d\n", desenha_dados.erros);
+  printf("chutes: %s\n", desenha_dados.chutes);
+  printf("Palavra: %s\n", desenha_dados.palavra_desconhecida);
+}
+
+struct ForcaDesenha forca_desenha_new_ForcaDesenha(struct ForcaGame game_dados) {
+  struct ForcaDesenha desenha_dados;
+
+  desenha_dados.palavra_desconhecida = game_dados.palavra_dados.ad_palavra;
+  desenha_dados.dica = game_dados.palavra_dados.dica;
+  desenha_dados.chutes[0] = '\0';
+  desenha_dados.erros = game_dados.numero_erros;
+
+  return desenha_dados;
+}
+
+struct ForcaDesenha forca_desenha_free_ForcaDesenha(struct ForcaDesenha dados) {
+  // para que não aponte para ponteiros que foram desalocados com free
+  dados.palavra_desconhecida = NULL;
+  dados.dica = NULL;
+
+  return dados;
 }
 
 // função que limpa a tela, compatível com linux e windows
@@ -29,8 +46,8 @@ static void clear_screen() {
 }
 
 // desenha a forca
-static void forca(int error) {
-  switch (error) {
+static void forca(int erros) {
+  switch (erros) {
     case 0:
       printf("\
              +-------+\n\

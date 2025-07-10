@@ -10,6 +10,6 @@ int main(int argc, const char *const argv[]) {
   // retorna dados necessários para um novo jogo
   struct ForcaGame game_dados = forca_dados_novo_jogo(argc, argv);
 
-  forca_desenhe(game_dados);
+  forca_jogar(game_dados);
 }
 

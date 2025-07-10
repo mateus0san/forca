@@ -33,7 +33,6 @@ static struct ForcaGame new_ForcaGame(struct PalavraLista lista_palavras) {
    game_dados.palavra_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
    game_dados.palavra_dados.ad_palavra = new_adivinha_palavra(game_dados.palavra_dados.palavra); 
    game_dados.palavra_dados.dica = lista_palavras.nome_lista;
-   game_dados.caracteres_chutados[0] = '\0';
    game_dados.numero_acertos = game_dados.numero_erros = 0;
 
   return game_dados;
