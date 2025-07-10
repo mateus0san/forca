@@ -11,6 +11,7 @@ set(SOURCES
     src/main.c
     src/forca_arquivo.c
     src/forca_desenha.c
+    src/forca_dados.c
     src/palavras/palavras_arquivos/programacao.c
     src/palavras/palavras_arquivos/animais.c
     src/palavras/palavras_arquivos/tecnologia.c

@@ -2,12 +2,8 @@
 #ifndef FORCA_H
 #define FORCA_H
 
+/* declaração de dados para o jogo */
 
-/* declarações para forca_arquivo.c */
-
-/* guarda informações da palavra
-   apos usar essa struct com forca_arquivo_carregar_lista
-   use free_ForcaGame */
 struct ForcaPalavra {
   char *dica;    // será equivalente a dica[];
   char *palavra; // será equivalente a palavra[];
@@ -20,10 +16,17 @@ struct ForcaGame {
   struct ForcaPalavra palavra_dados;
 };
 
-struct ForcaGame forca_arquivo_dados_novogame(int, char **);
+/* fim da declaração de dados para o jogo */
+
+/* declarações para forca_dados.c */
+
+// retorna os dados para um novo jogo 
+struct ForcaGame forca_dados_novo_jogo(int, const char *const *);
+
+// desaloca os dados retornados por forca_dados_novo_jogo 
 void free_ForcaGame(struct ForcaGame);
 
-/* fim das declarações de forca_arquivo.c */
+/* fim das declarações de forca_dados.c */
 
 /* declarações para forca_desenha.c */
 

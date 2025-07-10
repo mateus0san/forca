@@ -1,4 +1,3 @@
-// palavras.h é apenas incluído em forca_arquivo.c
 #ifndef PALAVRAS_H
 #define PALAVRAS_H
 
