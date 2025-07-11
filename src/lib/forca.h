@@ -4,15 +4,9 @@
 
 /* declaração de dados para o jogo */
 
-struct ForcaPalavra {
+struct ForcaGame {
   char *dica;    // será equivalente a dica[];
   char *palavra; // será equivalente a palavra[];
-  char *ad_palavra; // palavra para ser advinhada
-};
-struct ForcaGame {
-  int numero_acertos;
-  int numero_erros;
-  struct ForcaPalavra palavra_dados;
 };
 
 /* fim da declaração de dados para o jogo */
