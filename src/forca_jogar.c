@@ -11,9 +11,10 @@ struct Chutes {
   int len;
 };
 
+static int venceu_perdeu(char *, struct Chutes, struct ForcaDesenha *);
 static int ja_chutou_char(char *, char);
-static int caractere_chute(char *, struct Chutes, struct ForcaDesenha *);
-static int palavra_chute(char *, struct Chutes, struct ForcaDesenha *);
+static void caractere_chute(char *, struct Chutes, struct ForcaDesenha *);
+static void palavra_chute(char *, struct Chutes, struct ForcaDesenha *);
 static int lidar_chute(char *, struct ForcaDesenha *, struct Chutes);
 static void loop(struct ForcaGame, struct ForcaDesenha *);
 
@@ -37,28 +38,26 @@ static void loop(struct ForcaGame dados, struct ForcaDesenha *desenha) {
 
 static int lidar_chute(char *palavra, struct ForcaDesenha *desenha, struct Chutes chute) {
   if (chute.len > 1)
-      return palavra_chute(palavra, chute, desenha);
+      palavra_chute(palavra, chute, desenha);
   else if (chute.len == 1)
-      return caractere_chute(palavra, chute, desenha);
+      caractere_chute(palavra, chute, desenha);
   else
       return 1;
+  
+  return venceu_perdeu(palavra, chute, desenha);
 }
 
 #define NUMERO_ERROS 6
-static int palavra_chute(char *palavra, struct Chutes chute, struct ForcaDesenha *desenha) {
-  if (strcmp(chute.string, palavra) == 0) {
-    forca_desenhe_venceu(palavra);
-    return 0;
-  } else if ((desenha->erros += chute.len) >= NUMERO_ERROS) {
-    forca_desenhe_perdeu(palavra);
-    return 0;
-  }
-  return 1;
+static void palavra_chute(char *palavra, struct Chutes chute, struct ForcaDesenha *desenha) {
+  if (strcmp(chute.string, palavra) == 0)
+    return;
+  else 
+    desenha->erros += chute.len;
 }
 
-static int caractere_chute(char *palavra, struct Chutes chute, struct ForcaDesenha *desenha) {
+static void caractere_chute(char *palavra, struct Chutes chute, struct ForcaDesenha *desenha) {
   if (ja_chutou_char(desenha->chutes, chute.string[0])) {
-    return 1;
+    return;
   }
   int count = 0;
   for (int i = 0; palavra[i] != '\0'; i++) {
@@ -68,20 +67,8 @@ static int caractere_chute(char *palavra, struct Chutes chute, struct ForcaDesen
     count++;
   }
 
-  if (count == 0) {
+  if (count == 0) 
     desenha->erros += 1;
-  }
-  if (desenha->erros >= NUMERO_ERROS) {
-    forca_desenhe_perdeu(palavra);
-    return 0;
-  }
-
-  if (strcmp(desenha->palavra_desconhecida, palavra) == 0) {
-    forca_desenhe_venceu(palavra);
-    return 0;
-  }
-  
-  return 1;
 }
 
 static int ja_chutou_char(char *lista_alfabeto, char c) {
@@ -96,4 +83,16 @@ static int ja_chutou_char(char *lista_alfabeto, char c) {
   lista_alfabeto[i++] = c;
   lista_alfabeto[i] = '\0';
   return 0;
+}
+
+static int venceu_perdeu(char *palavra, struct Chutes chute, struct ForcaDesenha *desenha) {
+  if ((strcmp(palavra, desenha->palavra_desconhecida) == 0) || (strcmp(palavra, chute.string) == 0)) {
+    forca_desenhe_venceu(palavra);
+    return 0;
+  } else if (desenha->erros >= NUMERO_ERROS) {
+    forca_desenhe_perdeu(palavra);
+    return 0;
+  }
+
+  return 1;
 }
