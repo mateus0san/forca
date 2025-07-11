@@ -1,29 +1,44 @@
 /* forca_desenha é responsável por mostrar informações do jogo */
 
+#include "lib/windows_linux.h"
 #include "lib/forca_desenha.h"
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-static void clear_screen(); 
 static void forca(int);
-
+static char *new_palavra_desconhecida(char *); // trata a palavra secreta
 
 void forca_desenha(struct ForcaDesenha desenha_dados) {
   clear_screen();
   printf("----------------------%s------------------------\n", desenha_dados.dica);
-  forca(desenha_dados.erros);
-  printf("erros: %d\n", desenha_dados.erros);
+  forca(*desenha_dados.erros);
+  printf("erros: %d\n", *desenha_dados.erros);
   printf("chutes: %s\n", desenha_dados.chutes);
   printf("Palavra: %s\n", desenha_dados.palavra_desconhecida);
+}
+
+void forca_desenhe_venceu(char *palavra) {
+  printf("\
+###############################\n\
+você venceu! a palavra era: %s\n\
+###############################\n", palavra);
+}
+
+void forca_desenhe_perdeu(char *palavra) {
+    printf("\
+###############################\n\
+você perdeu! a palavra era: %s\n\
+###############################\n", palavra);
 }
 
 struct ForcaDesenha forca_desenha_new_ForcaDesenha(struct ForcaGame game_dados) {
   struct ForcaDesenha desenha_dados;
 
-  desenha_dados.palavra_desconhecida = game_dados.palavra_dados.ad_palavra;
-  desenha_dados.dica = game_dados.palavra_dados.dica;
+  desenha_dados.palavra_desconhecida = new_palavra_desconhecida(game_dados.palavra);
+  desenha_dados.dica = game_dados.dica;
   desenha_dados.chutes[0] = '\0';
-  desenha_dados.erros = game_dados.numero_erros;
+  desenha_dados.erros = malloc(sizeof(int));
 
   return desenha_dados;
 }
@@ -36,14 +51,20 @@ struct ForcaDesenha forca_desenha_free_ForcaDesenha(struct ForcaDesenha dados) {
   return dados;
 }
 
-// função que limpa a tela, compatível com linux e windows
-static void clear_screen() {
-  #ifdef _WIN32
-      system("cls");
-  #else
-      system("clear");
-  #endif
+static char *new_palavra_desconhecida(char *palavra) {
+  int len_palavra = strlen(palavra);
+  char *esconder_palavra = malloc(len_palavra + 1);
+
+  for (int i = 0; i < len_palavra; i++) {
+    esconder_palavra[i] = (palavra[i] == ' ') ? ' ' : '_';
+  }
+
+  esconder_palavra[len_palavra] = '\0';
+
+  return esconder_palavra;
 }
+
+// função que limpa a tela, compatível com linux e windows
 
 // desenha a forca
 static void forca(int erros) {
