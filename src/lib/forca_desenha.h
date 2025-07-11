@@ -5,7 +5,7 @@
 
 struct ForcaDesenha {
   char *palavra_desconhecida;
-  char chutes[27]; // alfabeto + '\0' == 26 + 1
+  char *chutes; // alfabeto + '\0' == 26 + 1
   char *dica;
   int *erros;
 };

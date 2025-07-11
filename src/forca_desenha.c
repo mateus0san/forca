@@ -8,6 +8,7 @@
 
 static void forca(int);
 static char *new_palavra_desconhecida(char *); // trata a palavra secreta
+static char *new_chutes(void);
 
 void forca_desenha(struct ForcaDesenha desenha_dados) {
   clear_screen();
@@ -37,7 +38,7 @@ struct ForcaDesenha forca_desenha_new_ForcaDesenha(struct ForcaGame game_dados) 
 
   desenha_dados.palavra_desconhecida = new_palavra_desconhecida(game_dados.palavra);
   desenha_dados.dica = game_dados.dica;
-  desenha_dados.chutes[0] = '\0';
+  desenha_dados.chutes = new_chutes();
   desenha_dados.erros = malloc(sizeof(int));
 
   return desenha_dados;
@@ -64,7 +65,11 @@ static char *new_palavra_desconhecida(char *palavra) {
   return esconder_palavra;
 }
 
-// função que limpa a tela, compatível com linux e windows
+static char *new_chutes(void) {
+  char *p = malloc(27); // 26 letras + '\0'
+
+  return p;
+}
 
 // desenha a forca
 static void forca(int erros) {

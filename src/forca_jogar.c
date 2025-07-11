@@ -1,6 +1,6 @@
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include "lib/windows_linux.h"
 #include "lib/forca.h"
 #include "lib/forca_desenha.h"
 #include "lib/forca_string.h"
@@ -11,6 +11,7 @@ struct Chutes {
   int len;
 };
 
+static int ja_chutou_char(char *, char);
 static int caractere_chute(char *, struct Chutes, struct ForcaDesenha);
 static int palavra_chute(char *, struct Chutes, struct ForcaDesenha);
 static int lidar_chute(char *, struct ForcaDesenha, struct Chutes);
@@ -56,6 +57,9 @@ static int palavra_chute(char *palavra, struct Chutes chute, struct ForcaDesenha
 }
 
 static int caractere_chute(char *palavra, struct Chutes chute, struct ForcaDesenha desenha) {
+  if (ja_chutou_char(desenha.chutes, chute.string[0])) {
+    return 1;
+  }
   int count = 0;
   for (int i = 0; palavra[i] != '\0'; i++) {
     if (chute.string[0] != palavra[i])
@@ -71,7 +75,25 @@ static int caractere_chute(char *palavra, struct Chutes chute, struct ForcaDesen
     forca_desenhe_perdeu(palavra);
     return 0;
   }
+
+  if (strcmp(desenha.palavra_desconhecida, palavra) == 0) {
+    forca_desenhe_venceu(palavra);
+    return 0;
+  }
   
   return 1;
 }
 
+static int ja_chutou_char(char *lista_alfabeto, char c) {
+  if (strchr(lista_alfabeto, c) != NULL) {
+    printf("Você já chutou o char: %c\n", c);
+    system_pause();
+    return 1;
+  }
+  int i = 0;
+  while (lista_alfabeto[i] != '\0')
+    i++;
+  lista_alfabeto[i++] = c;
+  lista_alfabeto[i] = '\0';
+  return 0;
+}
