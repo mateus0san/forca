@@ -90,7 +90,8 @@ forca/
 │   └── lib/ bibliotecas, (possuem a declaração de funções e structs públicas)
 │       ├── forca.h
 │       ├── forca_arquivo.h
-│       ├── forca_desenho.h
+│       ├── forca_desenha.h
+│       ├── forca_string.h
 │       ├── palavras.h
 │       ├── windows_linux.h
 ```
