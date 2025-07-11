@@ -14,6 +14,8 @@ int main(int argc, const char *const argv[]) {
   struct ForcaGame game_dados = forca_dados_novo_jogo(argc, argv);
 
   forca_jogar(game_dados);
+
+  free_ForcaGame(game_dados);
   } while (jogar_novamente());
 }
 
