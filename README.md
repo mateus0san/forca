@@ -79,14 +79,18 @@ Windows
 forca/
 ├── src/
 │   ├── main.c
-│   ├── forca.h
-│   ├── forca_arquivo.c
-│   ├── forca_desenha.c
-│   └── palavras/
+│   ├── forca_arquivo.c  responsável por lidar com arquivos
+│   ├── forca_desenha.c  responsável por desenhar no output
+│   ├── palavras.c       define o que é uma lista de palavras
+│   ├── forca_string.h   verifica strings para que estajam no padrão pro jogo
+│   ├── windows_linux.c  define funções compátivies com o sistema
+│   ├── animais.c        arquivo de fallback (caso o usuário não forneça palavras pro jogo)
+│   ├── programacao.c    arquivo de fallback
+│   └── tecnologia.c     arquivo de fallback
+│   └── lib/ bibliotecas, (possuem a declaração de funções e structs públicas)
+│       ├── forca.h
+│       ├── forca_arquivo.h
+│       ├── forca_desenho.h
 │       ├── palavras.h
-│       ├── palavras.c
-│       └── palavras_arquivos/
-│           ├── animais.c
-│           ├── programacao.c
-│           └── tecnologia.c
+│       ├── windows_linux.h
 ```
