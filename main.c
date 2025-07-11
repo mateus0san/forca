@@ -31,11 +31,10 @@ int main()
         gotoxy(50,14);printf("║   ESCOLHA UMA OPCAO     ║ ");
         gotoxy(50,15);printf("║   [1] - INICIO          ║ ");
         gotoxy(50,16);printf("║   [2] - REGRAS          ║ ");
-        gotoxy(50,17);printf("║   [3] - teste           ║ ");
-        gotoxy(50,18);printf("║   [0] - SAIR            ║ ");
-        gotoxy(50,19);printf("║   OPCAO:                ║ ");
-        gotoxy(50,20);printf("╚═════════════════════════╝\n");
-        gotoxy(60,19);scanf("%d", &opcao);
+        gotoxy(50,17);printf("║   [0] - SAIR            ║ ");
+        gotoxy(50,18);printf("║   OPCAO:                ║ ");
+        gotoxy(50,19);printf("╚═════════════════════════╝\n");
+        gotoxy(60,18);scanf("%d", &opcao);
 
         system("cls");
         // switch criado para armazenar as opcoes que o usuario tem //
@@ -46,9 +45,6 @@ int main()
             break;
         case 2:
            printf("regras");
-            break;
-        case 3:
-           printf("teste");
             break;
         case 0:
 
