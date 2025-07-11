@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 include_directories(src/lib)
 
+add_compile_options(-Wall -Wextra -pedantic)
+
 set(SOURCES
     src/main.c
     src/forca_arquivo.c
