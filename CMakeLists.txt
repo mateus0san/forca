@@ -18,6 +18,7 @@ set(SOURCES
     src/tecnologia.c
     src/palavras.c
     src/forca_string.c
+    src/windows_linux.c
 )
 
 add_executable(forca ${SOURCES})
