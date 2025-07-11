@@ -6,8 +6,6 @@
 
 static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
 static struct ForcaGame new_ForcaGame(struct PalavraLista); // nova instancia da struct ForcaGame
-static char *new_adivinha_palavra(char *); // trata a palavra secreta
-
      
 struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
   struct PalavraLista lista_palavras = forca_arquivo_retorne_lista_palavra(argc, argv);
@@ -18,8 +16,8 @@ struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
 }
 
 void free_ForcaGame(struct ForcaGame game_dados) {
-  free(game_dados.palavra_dados.palavra);
-  free(game_dados.palavra_dados.dica);  
+  free(game_dados.palavra);
+  free(game_dados.dica);  
 }
 
   /* inicializando a struct
@@ -30,10 +28,8 @@ void free_ForcaGame(struct ForcaGame game_dados) {
 static struct ForcaGame new_ForcaGame(struct PalavraLista lista_palavras) {
    struct ForcaGame game_dados;
 
-   game_dados.palavra_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
-   game_dados.palavra_dados.ad_palavra = new_adivinha_palavra(game_dados.palavra_dados.palavra); 
-   game_dados.palavra_dados.dica = lista_palavras.nome_lista;
-   game_dados.numero_acertos = game_dados.numero_erros = 0;
+   game_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
+   game_dados.dica = lista_palavras.nome_lista;
 
   return game_dados;
 }
@@ -53,18 +49,3 @@ static char *escolher_palavra_lista(const char *const lista_palavras[]) {
 
   return palavra;
 }
-
-
-static char *new_adivinha_palavra(char *palavra) {
-  int len_palavra = strlen(palavra);
-  char *esconder_palavra = malloc(len_palavra + 1);
-
-  for (int i = 0; i < len_palavra; i++) {
-    esconder_palavra[i] = (palavra[i] == ' ') ? ' ' : '_';
-  }
-
-  esconder_palavra[len_palavra] = '\0';
-
-  return esconder_palavra;
-}
-
