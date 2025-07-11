@@ -5,17 +5,17 @@
 
 struct ForcaDesenha {
   char *palavra_desconhecida;
-  char *chutes; // alfabeto + '\0' == 26 + 1
   char *dica;
-  int *erros;
+  char chutes[27]; // alfabeto + '\0' == 26 + 1
+  int erros;
 };
 
-void forca_desenha(struct ForcaDesenha);
+void forca_desenha(struct ForcaDesenha *);
 void forca_desenhe_venceu(char *);
 void forca_desenhe_perdeu(char *);
 
-struct ForcaDesenha forca_desenha_new_ForcaDesenha(struct ForcaGame);
+struct ForcaDesenha *forca_desenha_new_ForcaDesenha(struct ForcaGame);
 
-struct ForcaDesenha forca_desenha_free_ForcaDesenha(struct ForcaDesenha);
+void forca_desenha_free_ForcaDesenha(struct ForcaDesenha *);
 
 #endif

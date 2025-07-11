@@ -5,7 +5,7 @@
 #include "lib/forca_arquivo.h"
 
 static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
-static struct ForcaGame new_ForcaGame(struct PalavraLista); // nova instancia da struct ForcaGame
+static struct ForcaGame new_ForcaGame(struct PalavraLista); // retorna nova instancia da struct ForcaGame
      
 struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
   struct PalavraLista lista_palavras = forca_arquivo_retorne_lista_palavra(argc, argv);

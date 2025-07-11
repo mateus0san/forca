@@ -10,13 +10,13 @@ static void forca(int);
 static char *new_palavra_desconhecida(char *); // trata a palavra secreta
 static char *new_chutes(void);
 
-void forca_desenha(struct ForcaDesenha desenha_dados) {
+void forca_desenha(struct ForcaDesenha *desenha_dados) {
   clear_screen();
-  printf("----------------------%s------------------------\n", desenha_dados.dica);
-  forca(*desenha_dados.erros);
-  printf("erros: %d\n", *desenha_dados.erros);
-  printf("chutes: %s\n", desenha_dados.chutes);
-  printf("Palavra: %s\n", desenha_dados.palavra_desconhecida);
+  printf("----------------------%s------------------------\n", desenha_dados->dica);
+  forca(desenha_dados->erros);
+  printf("erros: %d\n", desenha_dados->erros);
+  printf("chutes: %s\n", desenha_dados->chutes);
+  printf("Palavra: %s\n", desenha_dados->palavra_desconhecida);
 }
 
 void forca_desenhe_venceu(char *palavra) {
@@ -33,23 +33,24 @@ você perdeu! a palavra era: %s\n\
 ###############################\n", palavra);
 }
 
-struct ForcaDesenha forca_desenha_new_ForcaDesenha(struct ForcaGame game_dados) {
-  struct ForcaDesenha desenha_dados;
+struct ForcaDesenha *forca_desenha_new_ForcaDesenha(struct ForcaGame game_dados) {
+  struct ForcaDesenha *desenha_dados;
 
-  desenha_dados.palavra_desconhecida = new_palavra_desconhecida(game_dados.palavra);
-  desenha_dados.dica = game_dados.dica;
-  desenha_dados.chutes = new_chutes();
-  desenha_dados.erros = malloc(sizeof(int));
+  desenha_dados = malloc(sizeof(struct ForcaDesenha));
+  desenha_dados->palavra_desconhecida = new_palavra_desconhecida(game_dados.palavra);
+  desenha_dados->dica = game_dados.dica;
+  desenha_dados->chutes[0] = '\0';
+  desenha_dados->erros = 0;
 
   return desenha_dados;
 }
 
-struct ForcaDesenha forca_desenha_free_ForcaDesenha(struct ForcaDesenha dados) {
+void forca_desenha_free_ForcaDesenha(struct ForcaDesenha *dados) {
+  free(dados->palavra_desconhecida);
   // para que não aponte para ponteiros que foram desalocados com free
-  dados.palavra_desconhecida = NULL;
-  dados.dica = NULL;
+  dados->dica = NULL;
 
-  return dados;
+  free(dados);
 }
 
 static char *new_palavra_desconhecida(char *palavra) {
