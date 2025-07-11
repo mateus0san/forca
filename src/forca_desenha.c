@@ -8,7 +8,6 @@
 
 static void forca(int);
 static char *new_palavra_desconhecida(char *); // trata a palavra secreta
-static char *new_chutes(void);
 
 void forca_desenha(struct ForcaDesenha *desenha_dados) {
   clear_screen();
@@ -64,12 +63,6 @@ static char *new_palavra_desconhecida(char *palavra) {
   esconder_palavra[len_palavra] = '\0';
 
   return esconder_palavra;
-}
-
-static char *new_chutes(void) {
-  char *p = malloc(27); // 26 letras + '\0'
-
-  return p;
 }
 
 // desenha a forca
