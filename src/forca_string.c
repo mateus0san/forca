@@ -38,6 +38,10 @@ int forca_string_valida(char *palavra, char *dica) {
       palavra_invalida(palavra, dica);
       return 1;
     }
+    if (palavra[i] == '\n') {
+      palavra[i] = '\0';
+      break;
+    }
     palavra[i] = tolower(palavra[i]);
   }
 
