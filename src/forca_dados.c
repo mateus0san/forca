@@ -9,8 +9,11 @@ static struct ForcaGame new_ForcaGame(struct PalavraLista); // retorna nova inst
      
 struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
   struct PalavraLista lista_palavras = forca_arquivo_retorne_lista_palavra(argc, argv);
+  struct ForcaGame game_dados = new_ForcaGame(lista_palavras);
   
-  return new_ForcaGame(lista_palavras);
+  if (lista_palavras.fallback != 1)
+    free_lista_palavras(&lista_palavras);
+  return game_dados;
 }
 
 void free_ForcaGame(struct ForcaGame game_dados) {

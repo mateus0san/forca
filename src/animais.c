@@ -63,6 +63,7 @@ struct PalavraLista palavras_animais_funcao() {
 
   lista.lista_palavras = palavras_animais;
   lista.nome_lista = malloc(strlen(animais) + 1);
+  lista.fallback = 1;
   strcpy(lista.nome_lista, animais);
   return lista;
 }

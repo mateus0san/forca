@@ -5,6 +5,7 @@
 struct PalavraLista {
   const char *const *lista_palavras;
   char *nome_lista;
+  int fallback; // a lista é um fallback? 1 ou 0
 };
 
 /*
@@ -29,5 +30,7 @@ struct PalavraLista palavras_tecnologia_funcao();
 
 // função utilizada em forca_arquivo.c
 struct PalavraLista palavras_retorne_lista_padrao();
+// desaloca uma lista_palavras
+void free_lista_palavras(struct PalavraLista *lista); 
 
 #endif

@@ -63,6 +63,7 @@ struct PalavraLista palavras_tecnologia_funcao() {
 
   lista.lista_palavras = palavras_tecnologia;
   lista.nome_lista = malloc(strlen(tecnologia) + 1);
+  lista.fallback = 1;
   strcpy(lista.nome_lista, tecnologia);
   return lista;
 }

@@ -90,6 +90,7 @@ struct PalavraLista palavras_programacao_funcao() {
 
   lista.lista_palavras = palavras_programacao;
   lista.nome_lista = malloc(strlen(programacao) + 1);
+  lista.fallback = 1;
   strcpy(lista.nome_lista, programacao);
   return lista;
 }

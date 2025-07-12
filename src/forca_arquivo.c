@@ -81,6 +81,7 @@ static int carregar_lista(const char *const file_name, struct PalavraLista *list
 
   lista->nome_lista = malloc(strlen(file_name) + 1);
   strcpy(lista->nome_lista, file_name);
+  lista->fallback = 0;
 
   return ler_arquivo(arquivo, lista);
 }

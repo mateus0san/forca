@@ -22,3 +22,9 @@ struct PalavraLista palavras_retorne_lista_padrao() {
       return palavras_programacao_funcao();
   }
 }
+
+void free_lista_palavras(struct PalavraLista *lista) {
+  for (int i = 0; lista->lista_palavras[i] != NULL; i++)
+    free((void *)lista->lista_palavras[i]);
+  free((void *) lista->lista_palavras);
+}
