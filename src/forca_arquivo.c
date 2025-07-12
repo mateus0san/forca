@@ -25,6 +25,7 @@ static struct PalavraLista carregar_fallback(void);
 static int carregar_lista(const char *const, struct PalavraLista *);
 static int arg_linha(int, const char * const *, struct PalavraLista *);
 static int ler_arquivo(FILE *, struct PalavraLista *); 
+static int conta_palavras(FILE *arquivo);
 
 static int ARGS = 1;
 struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc, const char * const argv[]) {
@@ -73,6 +74,7 @@ static int carregar_lista(const char *const file_name, struct PalavraLista *list
 
   if (arquivo == NULL) {
     fprintf(stderr, "Forca -> não foi possível ler o arquivo %s\n", file_name);
+    system_pause();
     ARGS = 0;
     return 0;
   }
@@ -80,11 +82,41 @@ static int carregar_lista(const char *const file_name, struct PalavraLista *list
   lista->nome_lista = malloc(strlen(file_name) + 1);
   strcpy(lista->nome_lista, file_name);
 
-  return 0;
-  // return ler_arquivo(arquivo, lista);
+  return ler_arquivo(arquivo, lista);
 }
 
-// static int ler_arquivo(FILE *arquivo, struct PalavraLista *lista) {
-//   char **lista_palavras;
-    
-// }
+static int ler_arquivo(FILE *arquivo, struct PalavraLista *lista) {
+
+  int cont_palavras = conta_palavras(arquivo);
+
+  char **palavras = malloc((cont_palavras + 1) * sizeof(char *));
+  size_t size = 0;
+  int i;
+
+  for (i = 0; i < cont_palavras; i++) {
+    palavras[i] = NULL;
+    if (getline(&(palavras[i]), &size, arquivo) == -1) {
+      free(palavras[i]);
+      break;
+    }
+  }
+
+  palavras[i] = NULL;
+
+  lista->lista_palavras = (const char *const *) palavras;
+
+  return 1;
+}
+
+static int conta_palavras(FILE *arquivo) {
+  int palavra_count = 0;
+  int c; 
+
+  while ((c = getc(arquivo)) != EOF) {
+    if (c == '\n')
+      palavra_count++;
+  }
+
+  rewind(arquivo);
+  return palavra_count;
+}
