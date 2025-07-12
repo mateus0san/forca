@@ -9,6 +9,10 @@
 
 
 #include "lib/palavras.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "lib/windows_linux.h"
 
 /* funções declaradas com static estão limitadas ao seu escopo,
   no caso, carregar_fallback() está limitada a
@@ -18,13 +22,16 @@
 */
 
 static struct PalavraLista carregar_fallback(void);
+static int carregar_lista(const char *const, struct PalavraLista *);
+static int arg_linha(int, const char * const *, struct PalavraLista *);
+static int ler_arquivo(FILE *, struct PalavraLista *); 
 
+static int ARGS = 1;
 struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc, const char * const argv[]) {
-  /* fazer mais tarde
-    lógica para lidar com argc e argv, por hora considerar que
-    o usuário não fornece argumentos pela linha de comando
-  */
+  struct PalavraLista lista;
 
+  if (ARGS != 0 && arg_linha(argc, argv, &lista) == 1)
+    return lista;
   /* fazer mais tarde
     lógica para o usuário digitar nome de arquivos, por hora
     considerar que o usuário não forneceu arquivos válidos
@@ -41,7 +48,6 @@ struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc, const char * c
   return carregar_fallback();
 }
 
-
 static struct PalavraLista carregar_fallback() {
 
   // struct em palavras.h
@@ -49,3 +55,36 @@ static struct PalavraLista carregar_fallback() {
 
   return lista;
 }
+
+static int arg_linha(int argc, const char * const argv[], struct PalavraLista *lista) {
+    if (argc-- == 1) {
+      fprintf(stderr, "Forca -> não informado argumentos na linha de comando...\n");
+      system_pause();
+      ARGS = 0;
+      return 0;
+    }
+    int i = rand() % argc + 1;
+
+    return carregar_lista(argv[i], lista);
+}
+
+static int carregar_lista(const char *const file_name, struct PalavraLista *lista) {
+  FILE *arquivo = fopen(file_name, "r");
+
+  if (arquivo == NULL) {
+    fprintf(stderr, "Forca -> não foi possível ler o arquivo %s\n", file_name);
+    ARGS = 0;
+    return 0;
+  }
+
+  lista->nome_lista = malloc(strlen(file_name) + 1);
+  strcpy(lista->nome_lista, file_name);
+
+  return 0;
+  // return ler_arquivo(arquivo, lista);
+}
+
+// static int ler_arquivo(FILE *arquivo, struct PalavraLista *lista) {
+//   char **lista_palavras;
+    
+// }
