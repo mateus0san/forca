@@ -20,7 +20,7 @@ Um commit específico, que faz uma coisa. As coisas começam a ficar bagunçadas
 se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
 
 ## História do projeto
-O projeto foi reiniciado do zero 3 vezes. Isso reflete o processo real de desenvolvimento: errar, recomeçar, refatorar. Os commits contam essa história.
+O projeto foi reiniciado do zero 2 vezes. Isso reflete o processo real de desenvolvimento: errar, recomeçar, refatorar. Os commits contam essa história.
 
 ## Download com git
 ```bash
@@ -86,12 +86,12 @@ forca/
 │   ├── windows_linux.c  define funções compátivies com o sistema
 │   ├── animais.c        arquivo de fallback (caso o usuário não forneça palavras pro jogo)
 │   ├── programacao.c    arquivo de fallback
-│   └── tecnologia.c     arquivo de fallback
+│   ├── tecnologia.c     arquivo de fallback
 │   └── lib/ bibliotecas, (possuem a declaração de funções e structs públicas)
 │       ├── forca.h
 │       ├── forca_arquivo.h
 │       ├── forca_desenha.h
 │       ├── forca_string.h
 │       ├── palavras.h
-│       ├── windows_linux.h
+│       └── windows_linux.h
 ```
