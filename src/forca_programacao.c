@@ -8,29 +8,11 @@
    a string 'gcc' só ocupa 3 posições +1 com o '\0'(nulo no final da string)
 */
 
-/*
-  'recursive descent parser', uma boa pros estudos, mas não pros padrões da disciplina
-  de progII, entenda que isso é apenas um array de ponteiros.
-
-  C usa um 'recursive descent parser' para analisar suas declarações.
-  
-  pode ignorar esse campo de comentário se quiser
-  
-  palavras_programacao[]           -> é um array de...
-
-   * const                         -> é um array de ponteiros constantes para...
-
-   const char                      -> é um array de ponteiros constantes para caracteres constantes
-
-   const char * const palavras_programacao[];
-   => palavras_programacao é um array de ponteiros constantes para char constantes
-*/
-   
-#include "palavras.h"
+#include "forca_palavras.h"
 #include <stdlib.h>
 #include <string.h>
 
-const char *const palavras_programacao[] = {
+char *palavras_programacao[] = {
   "Algoritmo",
   "Codigo",
   "Variavel",

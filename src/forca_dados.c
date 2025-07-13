@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include "forca.h"
-#include "palavras.h"
+#include "forca_palavras.h"
 #include "forca_arquivo.h"
 
-static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
+static char *escolher_palavra_lista(char **); // dado uma lista de palavras, escolhe uma aleatoriamente
 static struct ForcaGame new_ForcaGame(struct PalavraLista); // retorna nova instancia da struct ForcaGame
      
-struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
+struct ForcaGame forca_dados_novo_jogo(int argc, char *argv[]) {
   struct PalavraLista lista_palavras = forca_arquivo_retorne_lista_palavra(argc, argv);
   struct ForcaGame game_dados = new_ForcaGame(lista_palavras);
   
@@ -35,7 +35,7 @@ static struct ForcaGame new_ForcaGame(struct PalavraLista lista_palavras) {
   return game_dados;
 }
 
-static char *escolher_palavra_lista(const char *const lista_palavras[]) {
+static char *escolher_palavra_lista(char *lista_palavras[]) {
   int count = 0; // quantas palavras há na lista
 
   /* a definição de lista de palavras aqui foi definida no

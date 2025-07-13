@@ -14,7 +14,7 @@ struct ForcaGame {
 /* declarações para forca_dados.c */
 
 // retorna os dados para um novo jogo 
-struct ForcaGame forca_dados_novo_jogo(int, const char *const *);
+struct ForcaGame forca_dados_novo_jogo(int, char **);
 
 // desaloca os dados retornados por forca_dados_novo_jogo 
 void free_ForcaGame(struct ForcaGame);

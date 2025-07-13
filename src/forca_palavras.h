@@ -3,7 +3,7 @@
 
 
 struct PalavraLista {
-  const char *const *lista_palavras;
+  char  **lista_palavras;
   char *nome_lista;
   int fallback; // a lista é um fallback? 1 ou 0
 };

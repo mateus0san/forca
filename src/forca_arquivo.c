@@ -7,7 +7,7 @@
 */ 
 
 
-#include "palavras.h"
+#include "forca_palavras.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -22,15 +22,15 @@
 
 // retorna uma lista de palavras compilada com o código
 static struct PalavraLista carregar_fallback(void);
-static int carregar_lista(const char *const, struct PalavraLista *);
+static int carregar_lista(char *, struct PalavraLista *);
 // lida com um argument counter e uma argument vector precisa refatorar
-static int arg_linha(int, const char * const *, struct PalavraLista *);
+static int arg_linha(int, char **, struct PalavraLista *);
 static int ler_arquivo(FILE *, struct PalavraLista *); 
 static int conta_palavras(FILE *arquivo);
 
 static int ARGS = 1; // variável para identificar se há argumentos válidos
 
-struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc, const char * const argv[]) {
+struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc,char *argv[]) {
   struct PalavraLista lista;
 
   if (ARGS != 0 && arg_linha(argc, argv, &lista) == 1)
@@ -59,7 +59,7 @@ static struct PalavraLista carregar_fallback() {
   return lista;
 }
 
-static int arg_linha(int argc, const char * const argv[], struct PalavraLista *lista) {
+static int arg_linha(int argc, char *argv[], struct PalavraLista *lista) {
     if (argc-- == 1) {
       fprintf(stderr, "Forca -> não informado argumentos na linha de comando...\n");
       system_pause();
@@ -71,7 +71,7 @@ static int arg_linha(int argc, const char * const argv[], struct PalavraLista *l
     return carregar_lista(argv[i], lista);
 }
 
-static int carregar_lista(const char *const file_name, struct PalavraLista *lista) {
+static int carregar_lista(char *file_name, struct PalavraLista *lista) {
   FILE *arquivo = fopen(file_name, "r");
 
   if (arquivo == NULL) {
@@ -106,7 +106,7 @@ static int ler_arquivo(FILE *arquivo, struct PalavraLista *lista) {
 
   palavras[i] = NULL;
 
-  lista->lista_palavras = (const char *const *) palavras;
+  lista->lista_palavras = palavras;
 
   return 1;
 }

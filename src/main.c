@@ -5,7 +5,7 @@
 
 int jogar_novamente(void);
 
-int main(int argc, const char *const argv[]) {
+int main(int argc, char *argv[]) {
   // útil para gerar números mais 'aleatórios' com rand()
   srand(time(NULL));
 

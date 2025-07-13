@@ -15,10 +15,10 @@ set(SOURCES
     src/forca_desenha.c
     src/forca_dados.c
     src/forca_jogar.c
-    src/programacao.c
-    src/animais.c
-    src/tecnologia.c
-    src/palavras.c
+    src/forca_programacao.c
+    src/forca_animais.c
+    src/forca_tecnologia.c
+    src/forca_palavras.c
     src/forca_string.c
     src/windows_linux.c
 )

@@ -1,9 +1,9 @@
-#include "palavras.h"
+#include "forca_palavras.h"
 #include <stdlib.h>
 #include <string.h>
 
 static char *tecnologia = "tecnologia";
-const char *const palavras_tecnologia[] = {
+char *palavras_tecnologia[] = {
   "Smartphone",
   "Computador",
   "Laptop",

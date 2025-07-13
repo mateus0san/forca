@@ -1,10 +1,10 @@
-#include "palavras.h"
+#include "forca_palavras.h"
 #include <stdlib.h>
 #include <string.h>
 
 
 static char *animais = "animais";
-const char *const palavras_animais[] = {
+char *palavras_animais[] = {
   "Gato",
   "Cachorro",
   "Cavalo",
