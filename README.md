@@ -87,11 +87,11 @@ forca/
 │   ├── animais.c        arquivo de fallback (caso o usuário não forneça palavras pro jogo)
 │   ├── programacao.c    arquivo de fallback
 │   ├── tecnologia.c     arquivo de fallback
-│   └── lib/ bibliotecas, (possuem a declaração de funções e structs públicas)
-│       ├── forca.h
-│       ├── forca_arquivo.h
-│       ├── forca_desenha.h
-│       ├── forca_string.h
-│       ├── palavras.h
-│       └── windows_linux.h
+│lib bibliotecas, (possuem a declaração de funções e structs públicas)
+│   ├── forca.h
+│   ├── forca_arquivo.h
+│   ├── forca_desenha.h
+│   ├── forca_string.h
+│   ├── palavras.h
+│   └── windows_linux.h
 ```
