@@ -1,10 +1,9 @@
+/* esse arquivo realmente precisa refatorar */ 
+
 /* forca_aquivo.c deve lidar com arquivos relacionados ao
    jogo e em caso de erro, chamar fallback para usar uma
    lista de palavras padrão, definida em palavras/palavras.h.
    forca_arquivo.c deve retornar uma struct PalavraLista
-
-   forca_arquivo.c deve retornar uma lista de palavras, será
-   nessário refatoração.
 */ 
 
 
@@ -21,13 +20,16 @@
   public e private do java, o pub do rust, e outras linguagens.
 */
 
+// retorna uma lista de palavras compilada com o código
 static struct PalavraLista carregar_fallback(void);
 static int carregar_lista(const char *const, struct PalavraLista *);
+// lida com um argument counter e uma argument vector precisa refatorar
 static int arg_linha(int, const char * const *, struct PalavraLista *);
 static int ler_arquivo(FILE *, struct PalavraLista *); 
 static int conta_palavras(FILE *arquivo);
 
-static int ARGS = 1;
+static int ARGS = 1; // variável para identificar se há argumentos válidos
+
 struct PalavraLista forca_arquivo_retorne_lista_palavra(int argc, const char * const argv[]) {
   struct PalavraLista lista;
 
