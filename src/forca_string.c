@@ -1,6 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
-#include "lib/windows_linux.h"
+#include "windows_linux.h"
 
 static int char_invalido(int);
 static void palavra_invalida(char *, char *);

@@ -8,11 +8,11 @@
 */ 
 
 
-#include "lib/palavras.h"
+#include "palavras.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "lib/windows_linux.h"
+#include "windows_linux.h"
 
 /* funções declaradas com static estão limitadas ao seu escopo,
   no caso, carregar_fallback() está limitada a

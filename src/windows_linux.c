@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "lib/windows_linux.h"
+#include "windows_linux.h"
 
 
 void clear_screen(void) {

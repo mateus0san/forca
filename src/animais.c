@@ -1,4 +1,4 @@
-#include "lib/palavras.h"
+#include "palavras.h"
 #include <stdlib.h>
 #include <string.h>
 

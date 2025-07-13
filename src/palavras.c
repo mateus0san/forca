@@ -1,4 +1,4 @@
-#include "lib/palavras.h"
+#include "palavras.h"
 #include <stdlib.h>
 
 struct PalavraLista palavras_retorne_lista_padrao() {

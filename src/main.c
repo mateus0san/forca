@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "lib/forca.h" // cabaçalho para lidar com a lógica da forca
+#include "forca.h" // cabaçalho para lidar com a lógica da forca
 
 int jogar_novamente(void);
 

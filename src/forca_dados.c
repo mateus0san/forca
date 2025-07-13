@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
-#include "lib/forca.h"
-#include "lib/palavras.h"
-#include "lib/forca_arquivo.h"
+#include "forca.h"
+#include "palavras.h"
+#include "forca_arquivo.h"
 
 static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
 static struct ForcaGame new_ForcaGame(struct PalavraLista); // retorna nova instancia da struct ForcaGame

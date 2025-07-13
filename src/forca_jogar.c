@@ -1,9 +1,9 @@
 #include <string.h>
 #include <stdio.h>
-#include "lib/windows_linux.h"
-#include "lib/forca.h"
-#include "lib/forca_desenha.h"
-#include "lib/forca_string.h"
+#include "windows_linux.h"
+#include "forca.h"
+#include "forca_desenha.h"
+#include "forca_string.h"
 
 #define MAX_CHUTE 50
 struct Chutes {
