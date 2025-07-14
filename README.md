@@ -43,7 +43,7 @@ fprintf(stdout, "Adeus mundo!"); // imprimi no standard output (terminal)
 fprintf(stderr, "Errado mundo!"); // imprimi no standard error (terminal)
 ```
 stdout e stderr parecem ser redundantes, mas não são, e para perceber a
-diferença o estudo de [shells][https://en.wikipedia.org/wiki/Bash_(Unix_shell)]
+diferença o estudo de [shells](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 é essencial.
 
 ### Bibliotecas
