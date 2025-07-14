@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 
   forca_start_game(game_data);
 
-  // free_ForcaGame(game_data);
+  free_ForcaGame(game_data);
 
   return 0;
 }
