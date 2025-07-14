@@ -147,7 +147,7 @@ O usuário precisará desalocar usando a função free_ForcaGame.
 void free_ForcaGame(struct ForcaGame *); 
 ```
 ### Descrição
-Desaloca a memória para a struct ForcaGame que retornada com forca_get_data.
+Desaloca a memória para a struct ForcaGame que foi retornada com forca_get_data.
 
 ## Função forca_start_game
 ```c
