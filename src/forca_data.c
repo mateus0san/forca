@@ -14,10 +14,12 @@ static int count_words(FILE *);
 struct ForcaGame *forca_get_data(int argc, char *argv[]) {
   struct ForcaGame *game_data;
 
+  // lida com argumentos da linha de comando
   game_data = handle_args(argc, argv);
   if (game_data != NULL)
     return game_data;
 
+  // lida com arquivos informados em execução
   game_data = type_file();
   if (game_data != NULL)
     return game_data;
