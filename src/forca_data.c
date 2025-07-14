@@ -26,6 +26,14 @@ struct ForcaGame *forca_get_data(int argc, char *argv[]) {
   exit(1);
 }
 
+void free_ForcaGame(struct ForcaGame *game_data) {
+  for (int i = 0; game_data->word_list[i] != NULL; i++)
+    free(game_data->word_list[i]);
+  free(game_data->tip);
+  free(game_data->word_list);
+  free(game_data);
+}
+
 static struct ForcaGame *handle_args(int argc, char *argv[]) {
   if (argc == 1) {
     fprintf(stderr, "forca: no arguments in command line.\n");

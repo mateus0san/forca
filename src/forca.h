@@ -11,4 +11,6 @@ struct ForcaGame *forca_get_data(int, char **);
 
 void forca_start_game(struct ForcaGame *);
 
+void forca_free_ForcaGame(struct ForcaGame *);
+
 #endif

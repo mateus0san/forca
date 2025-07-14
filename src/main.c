@@ -10,13 +10,8 @@ int main(int argc, char *argv[]) {
 
   forca_start_game(game_data);
 
+  // free_ForcaGame(game_data);
+
   return 0;
 }
 
-void free_ForcaGame(struct ForcaGame *game_data) {
-  for (int i = 0; game_data->word_list != NULL; i++)
-    free(game_data->word_list[i]);
-  free(game_data->word_list);
-  free(game_data->tip);
-  free(game_data);
-}
