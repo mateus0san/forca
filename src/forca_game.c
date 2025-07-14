@@ -82,6 +82,10 @@ static int take_guesses(struct Draw *draw, char *word) {
   printf("Guess: ");
   int size_str = getline(&line, &size, stdin) - 1;
 
+  if (size_str < 0) {
+    exit(0);
+  }
+
   line[size_str] = '\0';
 
   for (int i = 0; line[i] != '\0'; i++)

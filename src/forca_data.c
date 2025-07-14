@@ -84,6 +84,8 @@ static struct ForcaGame *read_file(FILE *file, char *line) {
   game_dados->tip = line;
   game_dados->n_words = n_words;
 
+  fclose(file);
+
   return game_dados;
 }
 
