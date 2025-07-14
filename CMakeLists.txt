@@ -11,16 +11,13 @@ add_compile_options(-Wall -Wextra -pedantic)
 
 set(SOURCES
     src/main.c
-    src/forca_arquivo.c
-    src/forca_desenha.c
-    src/forca_dados.c
-    src/forca_jogar.c
-    src/forca_programacao.c
-    src/forca_animais.c
-    src/forca_tecnologia.c
-    src/forca_palavras.c
-    src/forca_string.c
-    src/windows_linux.c
+    src/forca_data.c
+    src/forca_draw.c
+    src/forca_draw.h
+    src/forca_game.c
+    src/forca.h
+    src/forca_system.c
+    src/forca_system.h
 )
 
 add_executable(forca ${SOURCES})
