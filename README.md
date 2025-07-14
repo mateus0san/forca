@@ -1,97 +1,73 @@
 # Forca
 
 ## PROGRAMAÇÃO II
-O objetivo é revisar os assuntos lecionados na disciplina(PROGII) de
-uma maneira coesa e organizada. O código terá mais comentários do
-que deveria em um código real, para facilitar o aprendizado e busca de
-informação.
+O objetivo é revisar os assuntos lecionados na disciplina de
+uma maneira coesa e organizada.
 
-## Commits
-O histórico de commits é importante para entendermos a evolução do projeto.
-Os commits deverão fazer uma coisa só ou de uma maneira muita organizada
-que faça sentido. Exemplos:
-```bash
-git commit -m 'Comentando a função foobar()'
-git commit -m 'Adicionando um subrotina para tratar a variável foo'
-git commit -m 'Removendo parâmetro que não é utilizado'
-git commit -m 'Refatorando a função soma'
-```
-Um commit específico, que faz uma coisa. As coisas começam a ficar bagunçadas
-se um commit faz muitas mudanças. Isso também se aplica a projetos reais!!!
-
-## História do projeto
-O projeto foi reiniciado do zero 2 vezes. Isso reflete o processo real de desenvolvimento: errar, recomeçar, refatorar. Os commits contam essa história.
-
-## Download com git
+# Download
 ```bash
 git clone https://github.com/mateus0san/forca.git
 ```
 
-## Primeira vez compilando
-Dentro do diretório forca, com CMake instalado e configurado, escolha uma das opções abaixo, Linux ou Windows
-### cmake
-Windows
-```bat
-build.bat
-```
-> **NOTA:** No Windows, com CMake instalando e configurado, a compilação pode ocorrer se você clicar no build.bat
+# Compilando
+Compilaçãcao dependente de IDE não será documentada, seria extremamente
+casativo demostrar todos os casos (CodeBlocks, Vscode, Visual Studio...)
 
-Linux
+Todos os comandos a seguir devem ser rodados dentro do diretório do projeto.
+## Compilando com cmake
+Caso possua o cmake instalado e configurado, no diretório do projeto rode:
 ```bash
-./build.sh
+mkdir build
+cd build
+cmake
 ```
-### GCC
-Muito ruim compilar assim...
-```c
-gcc main.c forca_arquivo.c forca_desenha.c palavras/palavras.c palavras/palavras_arquivos/animais.c palavras/palavras_arquivos/programacao.c palavras/palavras_arquivos/tecnologia.c
-```
-> **ATENÇÃO:** Compilação usando IDEs depende da ferramenta, procure sobre a sua no google.
 
-## Desenvolvedores recompilando usando cmake ou compilando pela primeira vez
-Para recompilar os binários, dentro do diretório build rode: 
+## Compilando  com GCC
+Caso seu shell aceite 'wildcard expansion'
 ```bash
-cmake --build .
+gcc *.c
 ```
-Para atualizar as configurações de build após modificar algo em CMakeLists.txt, dentro do
-diretório build rode:
+Caso seu shell não aceite 'wildcard expansion'
 ```bash
-cmake ..
+gcc forca_data.c  forca_draw.c  forca_draw.h  forca_game.c  forca.h\
+forca_system.c  forca_system.h  main.c
 ```
-> **ATENÇÃO:** Novamente, recompilar usando uma IDE depende da ferramenta, e provavelmente o
->  processo é igual a compilar.
 
-## Executando
-Após compilar o binário, dentro do diretório build/, para executar rode:
-
-Linux
+# Executando
+A lista de palavras aceita no programa segue esse padrão
+```text
+javascript
+python
+rust
+java virtual machine
+```
+## Executando: Método 1
+O programa aceita um arquivo como argumento, esse arquivo deve ser uma lista de
+palavras
 ```bash
-./forca
+./forca arq
 ```
 
-Windows
+## Executando: Método 2
+Caso não seja informado nenhum argumento na inicialização do programa, o
+usuário deverá informar o nome do arquivo em execução.
 ```bash
-.\forca
+Enter the file name: arq
 ```
-> **Nota:** Clicar no binário talvez o execute.
 
-## source code tree
+# source code tree
 ```text
 forca/
 ├── src/
 │   ├── main.c
-│   ├── forca_arquivo.c  responsável por lidar com arquivos
-│   ├── forca_desenha.c  responsável por desenhar no output
-│   ├── palavras.c       define o que é uma lista de palavras
-│   ├── forca_string.h   verifica strings para que estajam no padrão pro jogo
-│   ├── windows_linux.c  define funções compátivies com o sistema
-│   ├── animais.c        arquivo de fallback (caso o usuário não forneça palavras pro jogo)
-│   ├── programacao.c    arquivo de fallback
-│   ├── tecnologia.c     arquivo de fallback
-│lib bibliotecas, (possuem a declaração de funções e structs públicas)
+│   ├── forca_data.c     responsável por lidar com arquivos
+│   ├── forca_game.c     responsável por lidar com a lógica do jogo
+│   ├── forca_data.c     responsável por lidar com arquivos
+│   ├── forca_draw.h     responsável por desenhar no output 
+│   ├── forca_system.c   define funções compátivies com o sistema
+│ bibliotecas, (possuem a declaração de funções e structs públicas)
 │   ├── forca.h
-│   ├── forca_arquivo.h
-│   ├── forca_desenha.h
-│   ├── forca_string.h
-│   ├── palavras.h
+│   ├── forca_draw.h
+│   ├── forca_system.h
 │   └── windows_linux.h
 ```
