@@ -1,33 +1,22 @@
+#include "forca.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
-#include "forca.h" // cabaçalho para lidar com a lógica da forca
 
-int jogar_novamente(void);
+void free_ForcaGame(struct ForcaGame *);
 
 int main(int argc, char *argv[]) {
-  // útil para gerar números mais 'aleatórios' com rand()
   srand(time(NULL));
+  struct ForcaGame *game_data = forca_get_data(argc, argv);
 
-  do {
-  // retorna dados necessários para um novo jogo
-  struct ForcaGame game_dados = forca_dados_novo_jogo(argc, argv);
+  forca_start_game(game_data);
 
-  forca_jogar(game_dados);
-
-  free_ForcaGame(game_dados);
-  } while (jogar_novamente());
+  return 0;
 }
 
-int jogar_novamente(void) {
-  printf("Você quer jogar novamente? [s/n]:  ");
-  
-  int c, op;
-  while ((c = getc(stdin)) != EOF && c != '\n')
-    op = c;
-  if (c == EOF)
-    return 0;
-  if (op == 'S' || op == 's')
-    return 1;
-  return 0;
+void free_ForcaGame(struct ForcaGame *game_data) {
+  for (int i = 0; game_data->word_list != NULL; i++)
+    free(game_data->word_list[i]);
+  free(game_data->word_list);
+  free(game_data->tip);
+  free(game_data);
 }

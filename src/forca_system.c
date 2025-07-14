@@ -1,5 +1,5 @@
-#include <stdlib.h>
-#include "windows_linux.h"
+#include <stdio.h>
+#include "forca_system.h"
 
 
 void clear_screen(void) {
@@ -16,4 +16,15 @@ void system_pause(void) {
     #else
       system("read -n1 -r -p 'Pressione alguma tecla para continuar\n' key_lixo_forca");
     #endif
+}
+
+void *system_malloc(size_t size) {
+  void *ptr = malloc(size);
+
+  if (ptr == NULL) {
+    fprintf(stderr, "forca: malloc error\n");
+    exit(1);
+  }
+
+  return ptr;
 }
