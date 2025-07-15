@@ -1,26 +1,29 @@
-/**
- * @file system_compatible.h
- * @brief Define as funções que devem ser usadas para manter compatibilidade
-*/
-#ifndef WINDOWS_LINUX_H
-#define WINDOWS_LINUX_H
+#include <stdio.h>
+#include "system_compatible.h"
 
-#include <stdlib.h>
+void clear_screen(void) {
+  #ifdef _WIN32
+      system("cls");
+  #else
+      system("clear");
+  #endif
+}
 
+void system_pause(void) {
+    #ifdef _WIN32
+      system("pause");
+    #else
+      system("read -n1 -r -p 'Pressione alguma tecla para continuar\n' key_lixo_forca");
+    #endif
+}
 
-/**
- * @brief Limpa a tela 
-*/
-void clear_screen(void);
+void *system_malloc(size_t size) {
+  void *ptr = malloc(size);
 
-/**
- * @brief Pausa o terminal
-*/
-void system_pause(void);
+  if (ptr == NULL) {
+    fprintf(stderr, "forca: malloc error\n");
+    exit(1);
+  }
 
-/**
- * @brief Igual a malloc, mas fecha o programa se o ponteiro retornado for NULL 
-*/
-void *system_malloc(size_t);
-
-#endif
+  return ptr;
+}
