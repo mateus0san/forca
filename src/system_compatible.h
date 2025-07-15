@@ -1,29 +1,12 @@
-#include <stdio.h>
-#include "system_compatible.h"
+#ifndef WINDOWS_LINUX_H
+#define WINDOWS_LINUX_H
 
-void clear_screen(void) {
-  #ifdef _WIN32
-      system("cls");
-  #else
-      system("clear");
-  #endif
-}
+#include <stdlib.h>
 
-void system_pause(void) {
-    #ifdef _WIN32
-      system("pause");
-    #else
-      system("read -n1 -r -p 'Pressione alguma tecla para continuar\n' key_lixo_forca");
-    #endif
-}
+void clear_screen(void);
 
-void *system_malloc(size_t size) {
-  void *ptr = malloc(size);
+void system_pause(void);
 
-  if (ptr == NULL) {
-    fprintf(stderr, "forca: malloc error\n");
-    exit(1);
-  }
+void *system_malloc(size_t);
 
-  return ptr;
-}
+#endif

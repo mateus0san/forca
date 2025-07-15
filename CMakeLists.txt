@@ -13,11 +13,8 @@ set(SOURCES
     src/main.c
     src/forca_data.c
     src/forca_draw.c
-    src/forca_draw.h
     src/forca_game.c
-    src/forca.h
-    src/forca_system.c
-    src/forca_system.h
+    src/system_compatible.c
 )
 
 add_executable(forca ${SOURCES})
