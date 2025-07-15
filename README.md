@@ -78,7 +78,7 @@ gcc *.c
 ```
 Caso seu shell não aceite 'wildcard expansion'
 ```bash
-gcc forca_data.c forca_draw.c forca_game.c forca_system.c main.c
+gcc forca_data.c forca_draw.c forca_game.c system_compatible.c main.c
 ```
 
 # Executando
