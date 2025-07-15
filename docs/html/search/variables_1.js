@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['guesses_0',['guesses',['../structDraw.html#a06e84470c52337d1e565f50fafdd51e0',1,'Draw']]]
+  ['tip_0',['tip',['../structForcaGame.html#a1cc1a714d0dc0b8df5185c14d2378ca8',1,'ForcaGame']]]
 ];

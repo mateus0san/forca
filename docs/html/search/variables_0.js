@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errors_0',['errors',['../structDraw.html#a3495fe35112f7c85df360aa93d1920c0',1,'Draw']]]
+  ['n_5fwords_0',['n_words',['../structForcaGame.html#a5b2c9f64b4c8d7d6d8460541c818db05',1,'ForcaGame']]]
 ];

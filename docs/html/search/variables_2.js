@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['n_5fwords_0',['n_words',['../structForcaGame.html#a5b2c9f64b4c8d7d6d8460541c818db05',1,'ForcaGame']]]
+  ['word_5flist_0',['word_list',['../structForcaGame.html#ad82c0876b288a25a702b548411f4f0aa',1,'ForcaGame']]]
 ];

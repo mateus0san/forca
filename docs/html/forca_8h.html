@@ -104,18 +104,18 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af513079e6814db2082c77f053a8fc334" id="r_af513079e6814db2082c77f053a8fc334"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structForcaGame.html">ForcaGame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af513079e6814db2082c77f053a8fc334">forca_get_data</a> (int argc, char *arg[])</td></tr>
-<tr class="memdesc:af513079e6814db2082c77f053a8fc334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lida com os argumentos para inicializa o jogo da forca.  <br /></td></tr>
+<tr class="memitem:a0dd7f157fe43010ec4fa57c3d9fb4400" id="r_a0dd7f157fe43010ec4fa57c3d9fb4400"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structForcaGame.html">ForcaGame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dd7f157fe43010ec4fa57c3d9fb4400">forca_get_data</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0dd7f157fe43010ec4fa57c3d9fb4400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos, opcionalmente, conterá o nome de um arquivo que possurirá uma lista de palavras. Caso não haja arquivos válidos, solicitará em execução o nome de um arquivo.  <br /></td></tr>
 <tr class="memitem:aaa89f24c9dd766c64eb69c3ecc96e15d" id="r_aaa89f24c9dd766c64eb69c3ecc96e15d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa89f24c9dd766c64eb69c3ecc96e15d">forca_start_game</a> (struct <a class="el" href="structForcaGame.html">ForcaGame</a> *game_data)</td></tr>
-<tr class="memdesc:aaa89f24c9dd766c64eb69c3ecc96e15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controla funções para iniciar o jogo.  <br /></td></tr>
-<tr class="memitem:ada839a71b7e2743138d0ccd1585cd9a7" id="r_ada839a71b7e2743138d0ccd1585cd9a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada839a71b7e2743138d0ccd1585cd9a7">free_ForcaGame</a> (struct <a class="el" href="structForcaGame.html">ForcaGame</a> *)</td></tr>
-<tr class="memdesc:ada839a71b7e2743138d0ccd1585cd9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desaloca a memória alocada por forca_get_data.  <br /></td></tr>
+<tr class="memdesc:aaa89f24c9dd766c64eb69c3ecc96e15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controla funções para iniciar o jogo com uma struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> retornada por <a class="el" href="#a0dd7f157fe43010ec4fa57c3d9fb4400" title="Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos,...">forca_get_data()</a>.  <br /></td></tr>
+<tr class="memitem:aad8cbf63be5015c1390c5f045be719db" id="r_aad8cbf63be5015c1390c5f045be719db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad8cbf63be5015c1390c5f045be719db">free_ForcaGame</a> (struct <a class="el" href="structForcaGame.html">ForcaGame</a> *game_data)</td></tr>
+<tr class="memdesc:aad8cbf63be5015c1390c5f045be719db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desaloca a memória alocada por <a class="el" href="#a0dd7f157fe43010ec4fa57c3d9fb4400" title="Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos,...">forca_get_data()</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contém as funções para rodar o jogo e uma struct básica. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="af513079e6814db2082c77f053a8fc334" name="af513079e6814db2082c77f053a8fc334"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af513079e6814db2082c77f053a8fc334">&#9670;&#160;</a></span>forca_get_data()</h2>
+<a id="a0dd7f157fe43010ec4fa57c3d9fb4400" name="a0dd7f157fe43010ec4fa57c3d9fb4400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd7f157fe43010ec4fa57c3d9fb4400">&#9670;&#160;</a></span>forca_get_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +133,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lida com os argumentos para inicializa o jogo da forca. </p>
+<p>Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos, opcionalmente, conterá o nome de um arquivo que possurirá uma lista de palavras. Caso não haja arquivos válidos, solicitará em execução o nome de um arquivo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>Número de argumentos. </td></tr>
@@ -141,16 +141,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> alocada dinamicamente.</dd></dl>
-<p>Lida com os argumentos para inicializa o jogo da forca.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">argc</td><td>Número de argumentos. </td></tr>
-    <tr><td class="paramname">argv</td><td>Vetor de argumentos. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> alocada dinamicamente. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retornará um ponteiro para um struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> que foi alocada dinamicamente. O usuário precisará desalocar usando a função <a class="el" href="#aad8cbf63be5015c1390c5f045be719db" title="Desaloca a memória alocada por forca_get_data().">free_ForcaGame()</a>. </dd></dl>
 
 </div>
 </div>
@@ -169,18 +160,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Controla funções para iniciar o jogo. </p>
+<p>Controla funções para iniciar o jogo com uma struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> retornada por <a class="el" href="#a0dd7f157fe43010ec4fa57c3d9fb4400" title="Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos,...">forca_get_data()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">game_data</td><td>ponteiro para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> </td></tr>
+    <tr><td class="paramname">game_data</td><td>Ponteiro para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ada839a71b7e2743138d0ccd1585cd9a7" name="ada839a71b7e2743138d0ccd1585cd9a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada839a71b7e2743138d0ccd1585cd9a7">&#9670;&#160;</a></span>free_ForcaGame()</h2>
+<a id="aad8cbf63be5015c1390c5f045be719db" name="aad8cbf63be5015c1390c5f045be719db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad8cbf63be5015c1390c5f045be719db">&#9670;&#160;</a></span>free_ForcaGame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,10 +185,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Desaloca a memória alocada por forca_get_data. </p>
+<p>Desaloca a memória alocada por <a class="el" href="#a0dd7f157fe43010ec4fa57c3d9fb4400" title="Deve receber um contador de argumentos e um vetor de argumentos. O vetor de argumentos,...">forca_get_data()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Ponteiro</td><td>para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> </td></tr>
+    <tr><td class="paramname">game_data</td><td>Ponteiro para struct <a class="el" href="structForcaGame.html" title="Struct com dados básicos do jogo.">ForcaGame</a> </td></tr>
   </table>
   </dd>
 </dl>

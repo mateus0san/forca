@@ -1,5 +1,5 @@
 # Foca
-## O básico de programação
+# O básico de programação
 O estudo do báciso em programação II nos dá o entendimento fundamental de como
 ler código fonte, dado uma função, ela recebe parâmetros, faz alguma coisa que
 deve ser descrita de uma forma superficial em algumas linhas, e possui um
@@ -9,7 +9,7 @@ retorno. Portanto, há 3 fundamentos em uma função:
 2. O que ela faz.
 3. O que ela retorna.
 
-### Main
+## Main
 A main, ainda é uma função, que normalmente recebe como argumento um
 inteiro(argument counter), e um array de ponteiros(argument vector).
 Esses argumentos devem ser passados na inicialização do programa.
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 // temos um acesso de mémoria inválido, causando um crash */
 ```
 
-### Arquivos
+## Arquivos
 Uma das frases icônicas do mundo unix é 'everything is a file', sua câmera
 pode ser lida como um arquivo, seu microfone ou seu teclado, madando bits
 e recebendo bits.
@@ -46,7 +46,7 @@ stdout e stderr parecem ser redundantes, mas não são, e para perceber a
 diferença o estudo de [shells](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 é essencial.
 
-### Bibliotecas
+## Bibliotecas
 Bibliotecas em C é um assunto que possui aos montes na web, o uso de palavrinhas
 como #ifndef, static, include... não deve ser levado como palavras mágicas. O
 entedimento de bibliotecas em C leva a compreensão de outras 'palavras mágicas'
@@ -118,7 +118,7 @@ forca/
 │   └── forca_system.h
 ```
 
-## Descrição das funções públicas e structs públicas 
+# Descrição das funções públicas e structs públicas 
 
 ## Structs
 ```c
@@ -155,3 +155,6 @@ void forca_start_game(struct ForcaGame *);
 ```
 ### Descrição
 Inicializa o jogo com a struct que foi retornada por forca_get_data
+
+# Documentação estilo API com Doxygen
+![Doxygen](img/doxy.png)
