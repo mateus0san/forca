@@ -1,4 +1,4 @@
-# Foca
+# Forca
 # O básico de programação
 O estudo do báciso em programação II nos dá o entendimento fundamental de como
 ler código fonte, dado uma função, ela recebe parâmetros, faz alguma coisa que
