@@ -111,7 +111,7 @@ forca/
 │   ├── forca_data.c     responsável por lidar com arquivos
 │   ├── forca_game.c     responsável por lidar com a lógica do jogo
 │   ├── forca_draw.h     responsável por desenhar no output 
-│   ├── forca_system.c   define funções compátivies com o sistema
+│   ├── system_compatible.c   define funções compátivies com o sistema
 │ bibliotecas, (possuem a declaração de funções e structs públicas)
 │   ├── forca.h
 │   ├── forca_draw.h
