@@ -1,3 +1,7 @@
+/*
+ * @file main.c
+ * @brief chama forca_get_data, forca_start_game e free_ForcaGame, executando o jogo
+*/
 #include "forca.h"
 #include <stdlib.h>
 #include <time.h>

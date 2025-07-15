@@ -1,16 +1,65 @@
+/**
+ * @file forca_data.c
+ * @brief Implementação das funções responsáveis por leitura de arquivos e alocação da estrutura de dados do jogo da forca.
+ */
+
 #include "forca.h"
 #include "forca_system.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-static struct ForcaGame *handle_args(int , char **);
-static struct ForcaGame *type_file(void);
-static struct ForcaGame *read_file(FILE *, char *);
-static void remove_breakline(char *);
-static char **read_word_list(FILE *, char *, int n_words); 
-static int count_words(FILE *);
+/**
+ * @brief Trata os argumentos da linha de comando e tenta abrir o arquivo informado.
+ * @param argc Número de argumentos.
+ * @param argv Vetor de argumentos.
+ * @return Ponteiro para struct ForcaGame com dados carregados.
+ */
+static struct ForcaGame *handle_args(int argc, char *argv[]);
 
+/**
+ * @brief Solicita ao usuário que digite o nome do arquivo.
+ * @return Ponteiro para struct ForcaGame alocada dinamicamente com dados do arquivo informado.
+ */
+static struct ForcaGame *type_file(void);
+
+/**
+ * @brief Lê um arquivo e preenche a struct ForcaGame com as palavras.
+ * @param file Ponteiro para o arquivo aberto.
+ * @param filename Nome do arquivo.
+ * @return Ponteiro para struct ForcaGame alocada dinamicamente.
+ */
+static struct ForcaGame *read_file(FILE *file, char *filename);
+
+/**
+ * @brief Remove o caractere de nova linha ('\n') de uma string, se presente.
+ * @param word Ponteiro para a string a ser modificada.
+ */
+static void remove_breakline(char *word);
+
+/**
+ * @brief Lê uma lista de palavras de um arquivo.
+ * @param file Ponteiro para o arquivo aberto.
+ * @param filename Nome do arquivo (será armazenado como dica).
+ * @param n_words Número de palavras a serem lidas.
+ * @return Ponteiro para vetor de strings (lista de palavras).
+ */
+static char **read_word_list(FILE *file, char *filename, int n_words); 
+
+/**
+ * @brief Conta o número de linhas (palavras) em um arquivo.
+ * @param file Ponteiro para o arquivo já aberto.
+ * @return Quantidade de palavras (linhas) no arquivo.
+ */
+static int count_words(FILE *file);
+
+/**
+ * @brief Função pública que lida com os argumentos e inicializa o jogo da forca.
+ * 
+ * @param argc Número de argumentos.
+ * @param argv Vetor de argumentos.
+ * @return Ponteiro para struct ForcaGame alocada dinamicamente.
+ */
 struct ForcaGame *forca_get_data(int argc, char *argv[]) {
   struct ForcaGame *game_data;
 

@@ -1,0 +1,93 @@
+\doxysection{forca.\+h File Reference}
+\hypertarget{forca_8h}{}\label{forca_8h}\index{forca.h@{forca.h}}
+
+
+Contém as funções para rodar o jogo e uma struct básica.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}}
+\begin{DoxyCompactList}\small\item\em Struct com dados básicos do jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{forca_8h_af513079e6814db2082c77f053a8fc334}{forca\+\_\+get\+\_\+data}} (int argc, char \texorpdfstring{$\ast$}{*}arg\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lida com os argumentos para inicializa o jogo da forca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{forca_8h_aaa89f24c9dd766c64eb69c3ecc96e15d}{forca\+\_\+start\+\_\+game}} (struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*}game\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Controla funções para iniciar o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{forca_8h_ada839a71b7e2743138d0ccd1585cd9a7}{free\+\_\+\+Forca\+Game}} (struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Desaloca a memória alocada por forca\+\_\+get\+\_\+data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contém as funções para rodar o jogo e uma struct básica. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{forca_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{forca_8h_af513079e6814db2082c77f053a8fc334}\index{forca.h@{forca.h}!forca\_get\_data@{forca\_get\_data}}
+\index{forca\_get\_data@{forca\_get\_data}!forca.h@{forca.h}}
+\doxysubsubsection{\texorpdfstring{forca\_get\_data()}{forca\_get\_data()}}
+{\footnotesize\ttfamily \label{forca_8h_af513079e6814db2082c77f053a8fc334} 
+struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*} forca\+\_\+get\+\_\+data (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Lida com os argumentos para inicializa o jogo da forca. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Número de argumentos. \\
+\hline
+{\em argv} & Vetor de argumentos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para struct \doxylink{structForcaGame}{Forca\+Game} alocada dinamicamente.
+\end{DoxyReturn}
+Lida com os argumentos para inicializa o jogo da forca.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Número de argumentos. \\
+\hline
+{\em argv} & Vetor de argumentos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para struct \doxylink{structForcaGame}{Forca\+Game} alocada dinamicamente. 
+\end{DoxyReturn}
+\Hypertarget{forca_8h_aaa89f24c9dd766c64eb69c3ecc96e15d}\index{forca.h@{forca.h}!forca\_start\_game@{forca\_start\_game}}
+\index{forca\_start\_game@{forca\_start\_game}!forca.h@{forca.h}}
+\doxysubsubsection{\texorpdfstring{forca\_start\_game()}{forca\_start\_game()}}
+{\footnotesize\ttfamily \label{forca_8h_aaa89f24c9dd766c64eb69c3ecc96e15d} 
+void forca\+\_\+start\+\_\+game (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Controla funções para iniciar o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+\_\+data} & ponteiro para struct \doxylink{structForcaGame}{Forca\+Game} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{forca_8h_ada839a71b7e2743138d0ccd1585cd9a7}\index{forca.h@{forca.h}!free\_ForcaGame@{free\_ForcaGame}}
+\index{free\_ForcaGame@{free\_ForcaGame}!forca.h@{forca.h}}
+\doxysubsubsection{\texorpdfstring{free\_ForcaGame()}{free\_ForcaGame()}}
+{\footnotesize\ttfamily \label{forca_8h_ada839a71b7e2743138d0ccd1585cd9a7} 
+void free\+\_\+\+Forca\+Game (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structForcaGame}{Forca\+Game}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Desaloca a memória alocada por forca\+\_\+get\+\_\+data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ponteiro} & para struct \doxylink{structForcaGame}{Forca\+Game} \\
+\hline
+\end{DoxyParams}
