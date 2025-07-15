@@ -1,11 +1,6 @@
-/**
- * @file forca_draw.c
- * @brief Contém as funções responsáveis por desenhar o estado do jogo da forca no terminal.
- */
-
 #include "forca_draw.h"
 #include <stdio.h>
-#include "forca_system.h"
+#include "system_compatible.h"
 
 static void forca(int errors);
 

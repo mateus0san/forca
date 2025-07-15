@@ -1,9 +1,5 @@
-/**
- * @file forca_system.c
- * @brief define funções compatíveis de mais baixo nível do Linux e Windows
-*/
 #include <stdio.h>
-#include "forca_system.h"
+#include "system_compatible.h"
 
 void clear_screen(void) {
   #ifdef _WIN32
