@@ -36,7 +36,7 @@ padrão, normalmente seu terminal, o uso correto dessas saídas em um programa
 é fundamental para debug.
 
 Podemos usar funções de arquivos para imprimir erros ou conteúdo, e ler
-da entreda padrão
+da entrada padrão
 ```c
 fprintf(stdin, "Olá mundo!"); // adiciona a string no buffer do teclado
 fprintf(stdout, "Adeus mundo!"); // imprimi no standard output (terminal)
