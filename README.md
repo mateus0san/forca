@@ -115,7 +115,7 @@ forca/
 │ bibliotecas, (possuem a declaração de funções e structs públicas)
 │   ├── forca.h
 │   ├── forca_draw.h
-│   └── forca_system.h
+│   └── system_compatible.h
 ```
 
 # Descrição das funções públicas e structs públicas 
