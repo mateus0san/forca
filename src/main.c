@@ -6,7 +6,6 @@
 
 #define MAX_WORDS 50
 #define MAX_WORD_SIZE 50
-#include "forca.h"
 
 char *get_file(int, char **);
 char *get_word(const char *);
