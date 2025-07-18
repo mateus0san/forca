@@ -2,8 +2,7 @@
 # Programação
 O estudo do báciso em programação II nos dá o entendimento fundamental de como
 ler código fonte, dado uma função, ela recebe parâmetros, faz alguma coisa que
-deve ser descrita de uma forma superficial em algumas linhas, e possui um
-retorno. Portanto, há 3 fundamentos em uma função:
+deve ser descrita, e possui um retorno. Portanto, há 3 fundamentos em uma função:
 
 1. Quais parâmetros a função recebe.
 2. O que ela faz.
