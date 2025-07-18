@@ -1,0 +1,78 @@
+#include <stdlib.h>
+#include <string.h>
+#include "lib/forca.h"
+#include "lib/palavras.h"
+#include "lib/forca_arquivo.h"
+
+static char *escolher_palavra_lista(const char *const *); // dado uma lista de palavras, escolhe uma aleatoriamente
+static struct ForcaGame new_ForcaGame(struct PalavraLista); // retorna nova instancia da struct ForcaGame
+static struct PalavraLista obter_lista_por_categoria(int categoria); // NOVA FUNÇÃO
+
+// FUNÇÃO ORIGINAL - mantida para compatibilidade
+struct ForcaGame forca_dados_novo_jogo(int argc, const char *const argv[]) {
+  struct PalavraLista lista_palavras = forca_arquivo_retorne_lista_palavra(argc, argv);
+  struct ForcaGame game_dados = new_ForcaGame(lista_palavras);
+
+  if (lista_palavras.fallback != 1)
+    free_lista_palavras(&lista_palavras);
+  return game_dados;
+}
+
+// NOVA FUNÇÃO - para categoria específica
+struct ForcaGame forca_dados_novo_jogo_categoria(int categoria) {
+  struct PalavraLista lista_palavras = obter_lista_por_categoria(categoria);
+  struct ForcaGame game_dados = new_ForcaGame(lista_palavras);
+
+  if (lista_palavras.fallback != 1)
+    free_lista_palavras(&lista_palavras);
+  return game_dados;
+}
+
+void free_ForcaGame(struct ForcaGame game_dados) {
+  free(game_dados.palavra);
+  free(game_dados.dica);
+}
+
+// NOVA FUNÇÃO - obtém lista específica por categoria
+static struct PalavraLista obter_lista_por_categoria(int categoria) {
+  switch (categoria) {
+    case 1:
+      return palavras_programacao_funcao();
+    case 2:
+      return palavras_animais_funcao();
+    case 3:
+      return palavras_tecnologia_funcao();
+    default:
+      return palavras_programacao_funcao(); // fallback
+  }
+}
+
+  /* inicializando a struct
+     um comportamento semelhante a inicialização
+     de objetos(Programação orientada a objetos)
+     em uma função definada em um escopo privado (static).
+   */
+static struct ForcaGame new_ForcaGame(struct PalavraLista lista_palavras) {
+   struct ForcaGame game_dados;
+
+   game_dados.palavra = escolher_palavra_lista(lista_palavras.lista_palavras);
+   game_dados.dica = lista_palavras.nome_lista;
+
+  return game_dados;
+}
+
+static char *escolher_palavra_lista(const char *const lista_palavras[]) {
+  int count = 0; // quantas palavras há na lista
+
+  /* a definição de lista de palavras aqui foi definida no
+     palavras.h/programacao.c, onde no final da lista a um NULL */
+  while (lista_palavras[count] != NULL) {
+    count++;
+  }
+  unsigned index = rand() % count;
+
+  char *palavra = malloc(strlen(lista_palavras[index]) + 1);
+  strcpy(palavra, lista_palavras[index]);
+
+  return palavra;
+}

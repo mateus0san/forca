@@ -1,0 +1,187 @@
+# depslib dependency file v1.0
+1752613854 source:c:\users\walla\desktop\forcasblocks\animais.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\palavras.h
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\forca_arquivo.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lib/windows_linux.h"
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\windows_linux.h
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\forca_dados.c
+	<stdlib.h>
+	<string.h>
+	"lib/forca.h"
+	"lib/palavras.h"
+	"lib/forca_arquivo.h"
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\forca.h
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\forca_arquivo.h
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\forca_jogar.c
+	<string.h>
+	<stdio.h>
+	"lib/windows_linux.h"
+	"lib/forca.h"
+	"lib/forca_desenha.h"
+	"lib/forca_string.h"
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\forca_desenha.h
+	"forca.h"
+
+1752613854 c:\users\walla\desktop\forcasblocks\lib\forca_string.h
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\forca_string.c
+	<ctype.h>
+	<stdio.h>
+	"lib/windows_linux.h"
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\palavras.c
+	"lib/palavras.h"
+	<stdlib.h>
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\programacao.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\tecnologia.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752613854 source:c:\users\walla\desktop\forcasblocks\main.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"lib/forca.h"
+	"lib/menu.h"
+	<conio.h>
+
+1752616283 source:c:\users\walla\desktop\forcasblocks\forca_desenha.c
+	"lib/windows_linux.h"
+	"lib/forca_desenha.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+	"gconio.h"
+
+1752613854 c:\users\walla\desktop\forcasblocks\gconio.h
+	<stdio.h>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<termios.h>
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\animais.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\palavras.h
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\forca_arquivo.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lib/windows_linux.h"
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\windows_linux.h
+
+1752612710 source:c:\users\walla\downloads\forcasblocks\forcasblocks\forca_dados.c
+	<stdlib.h>
+	<string.h>
+	"lib/forca.h"
+	"lib/palavras.h"
+	"lib/forca_arquivo.h"
+
+1752612836 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\forca.h
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\forca_arquivo.h
+
+1752610865 source:c:\users\walla\downloads\forcasblocks\forcasblocks\forca_desenha.c
+	"lib/windows_linux.h"
+	"lib/forca_desenha.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+	"gconio.h"
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\forca_desenha.h
+	"forca.h"
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\gconio.h
+	<stdio.h>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<termios.h>
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\forca_jogar.c
+	<string.h>
+	<stdio.h>
+	"lib/windows_linux.h"
+	"lib/forca.h"
+	"lib/forca_desenha.h"
+	"lib/forca_string.h"
+
+1752461323 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\forca_string.h
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\forca_string.c
+	<ctype.h>
+	<stdio.h>
+	"lib/windows_linux.h"
+
+1752612710 source:c:\users\walla\downloads\forcasblocks\forcasblocks\main.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"lib/forca.h"
+	"lib/menu.h"
+	<conio.h>
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\palavras.c
+	"lib/palavras.h"
+	<stdlib.h>
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\programacao.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752461323 source:c:\users\walla\downloads\forcasblocks\forcasblocks\tecnologia.c
+	"lib/palavras.h"
+	<stdlib.h>
+	<string.h>
+
+1752612709 source:c:\users\walla\downloads\forcasblocks\forcasblocks\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"lib/windows_linux.h"
+
+1752611849 c:\users\walla\downloads\forcasblocks\forcasblocks\lib\menu.h
+
+1752613852 c:\users\walla\desktop\forcasblocks\lib\menu.h
+
+1752615991 source:c:\users\walla\desktop\forcasblocks\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"lib/windows_linux.h"
+
