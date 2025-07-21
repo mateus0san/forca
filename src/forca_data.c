@@ -7,7 +7,6 @@
 static struct ForcaGame *handle_args(int argc, char *argv[]);
 static struct ForcaGame *type_file(void);
 static struct ForcaGame *read_file(FILE *file, char *filename);
-static void remove_breakline(char *word);
 static char **read_word_list(FILE *file, char *filename, int n_words); 
 static int count_words(FILE *file);
 struct ForcaGame *forca_get_data(int argc, char *argv[]) {
@@ -53,15 +52,13 @@ static struct ForcaGame *handle_args(int argc, char *argv[]) {
 }
 
 static struct ForcaGame *type_file(void) {
-  size_t size = 0;
-  char *line = NULL;
+  char *line;
 
   printf("Enter the file name: ");
-  if (getline(&line, &size, stdin) < 1) {
+  if ((line = my_getline(stdin)) == NULL) {
     fprintf(stderr, "forca: file name invalid\n");
     exit(1);
   }
-  remove_breakline(line);
 
   FILE *file = fopen(line, "r");
   if (file == NULL) {
@@ -95,33 +92,18 @@ static char **read_word_list(FILE *file, char *file_name, int n_words) {
   }
 
   char **words_list = system_malloc((n_words + 1) * sizeof(char *));
-  size_t size;
   int i;
 
   for (i = 0; i < n_words; i++) {
-    words_list[i] = NULL;
-    size = 0;
-    if (getline(&(words_list[i]), &size, file) < 1) {
-      free(words_list[i]);
+    if ((words_list[i] = my_getline(file)) == NULL) {
       break;
     }
-    remove_breakline(words_list[i]);
   }
-
-  words_list[i] = NULL;
   if (words_list[0] == NULL) {
     fprintf(stderr, "forca: getline can't read words in %s\n", file_name);
     exit(1);
   }
   return words_list;
-}
-
-static void remove_breakline(char *word) {
-  for (int i = 0; word[i] != '\0'; i++)
-    if (word[i] == '\n') {
-      word[i] = '\0';
-      return;
-    }
 }
 
 static int count_words(FILE *file) {

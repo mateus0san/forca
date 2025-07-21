@@ -85,18 +85,14 @@ static struct Draw *new_Draw(char *word, char *tip) {
 }
 
 static int take_guesses(struct Draw *draw, char *word) {
-  size_t size = 0;
-  char *line = NULL;
-
   printf("Guess: ");
-  int size_str = getline(&line, &size, stdin) - 1;
+  char *line = my_getline(stdin);
 
-  if (size_str < 0) {
+  if (line == NULL) {
     exit(0);
   }
 
-  line[size_str] = '\0';
-
+  int size_str = strlen(line);
   for (int i = 0; line[i] != '\0'; i++)
     line[i] = tolower(line[i]);
 
